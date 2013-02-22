@@ -1,0 +1,110 @@
+﻿    tray_help=Aide / À propos...
+    tray_updates=Mettre à jour!
+    tray_ignore=Ignore fenêtre
+    tray_windows=Démarrage avec Windows
+    tray_templates=Modèles
+    tray_options=Options
+    tray_hotkeys=Raccourcis
+    tray_restart=Redémarrer
+    tray_colors=Couleur de la grille
+    tray_exit=Quitter
+
+    tray_refresh=- Rafraîchir cette liste -
+
+    tray_safemode=Mode sans échec
+    tray_showgrid=Afficher la grille
+    tray_shownumbers=Afficher la numérotation de grille
+    tray_lbuttondrag=Utiliser: Mode glisser par le titre
+    tray_mbuttondrag=Utiliser: Mode avec bouton central
+    tray_edgedrag=Utiliser: Mode de bordure
+    tray_edgetime=Définir le délais Mode de bordure...
+    tray_titlesize=Définir la taille de la barre de titre...
+    tray_gridorder=Définir l'odre de la grille...
+
+    tray_usecommand=Utiliser mode commande
+    tray_commandhotkey=Définir le raccourci commande...
+    tray_fastmove=Utiliser le déplacement rapide
+    tray_fastmovemodifiers=Modificateur de déplacement rapide...
+
+    tray_color_orange=Orange
+    tray_color_blue=Bleu
+    tray_color_black=Noir
+
+    error_ngroups=Une erreur s'est produite lors de l'ouverture du fichier grid.  La configuration par défaut sera restaurée. Veuillez sélectionner une autre grille du menu modèles.  ErrorCode:001
+    error_grid_p1=Une erreur s'est produite lors de la lecture du fichier grid.  La configuration par défaut sera restaurée.
+    error_grid_p2=Erreur de lecture pour un élément de la grille
+
+    info_removed_p1=Fenêtre retirée
+    info_removed_p2=des exception 
+    info_added_p1=Fenêtre ajoutée
+    info_added_p2=aux exceptions
+
+    tooltip_ignore=Appuyez sur F12 pour ignorer ou non la fenêtre ayant actuellement le focus, F11 pour annuler.
+
+    input_hotkey=Entrez la touche raccourci, Sélectionnez la touche qui sera utilisée pour passer au mode commande de GridMove. ^ signifie ctrl   + signifie shift   ! signifie alt et # signifie le bouton Windows.  ex. ^#g signifie ctrl+BoutonWindows+g. Il est a noter que l'ordre des touches n'a aucune importance...
+    input_fastmove=Entrez la touche filtre pour activer le déplacement rapide, Entrez la touche pour le déplacement rapide.  ^ signifie ctrl   + signifie shift   ! signifie alt et # signifie le bouton Windows.  ex.  ^# fera donc ctrl+BoutonWindows+1 déplacer la fenêtre active dans la première zone de la grille.  Il est a noter que l'ordre des touches n'a aucune importance...
+    input_gridorder=Entrez un ordre pour le défilement des différentes grilles, Il suffit d'entrer les noms comme ils le sont dans le menu "Modèles", separés par des virgules ','.
+    input_edgetime=Entrez un délais pour l'activation du mode de bordure, Entrez un délais avant que la grille apparaisse quand une fenêtre est déplacée en bordure d'écran.
+    input_titlesize=Entrez la taille de délimitation pour la zone de titre , Entrez un nombre de pixels pour la zone de titre qui sera utilisée pour le mode déplacement par le titre.
+
+    helper_1=Vous pouvez maintenant sélectionner l'endroit où déposer votre fenêtre.
+    helper_2=Vous pouvez maintenant glisser la fenêtre pour activer le mode déposer la fenêtre
+    helper_3=Garder la souris ici activera le mode déposer la fenêtre.
+    helper_4=Vous pouvez maintenant glisser la fenêtre en bordure d'écran pour activer le mode déposer la fenêtre
+
+;;english
+    tray_help=About/Help
+    tray_updates=Check For Updates!
+    tray_ignore=Ignore/Unignore window...
+    tray_windows=Start With Windows
+    tray_templates=Templates
+    tray_options=Options
+    tray_hotkeys=Hotkeys
+    tray_restart=Restart
+    tray_colors=Grid Color
+    tray_exit=Exit
+
+    tray_refresh=- Refresh this list -
+
+    tray_safemode=Safe Mode
+    tray_showgrid=Show Grid
+    tray_shownumbers=Show Numbers On Grid
+    tray_lbuttondrag=Use Drag On Window Title method
+    tray_mbuttondrag=Use Drag With Middle Button method
+    tray_edgedrag=Use Drag Window To Edge method
+    tray_edgetime=Set Edge Time...
+    tray_titlesize=Set Title Size...
+    tray_gridorder=Set Grid Order...
+
+    tray_usecommand=Use Command
+    tray_commandhotkey=Select Command Hotkey...
+    tray_fastmove=Use Fast Move
+    tray_fastmovemodifiers=Select Fast Move Modifiers...
+
+    tray_color_orange=Orange
+    tray_color_blue=Blue
+    tray_color_black=Black
+
+    error_ngroups=There was an error while opening the grid file.  Reverting to Default Config. Please select another grid from the templates menu.  ErrorCode:001
+    error_grid_p1=There was an error while reading the grid file.  Reverting to Default config. 
+    error_grid_p2=Read error on grid element 
+
+    info_removed_p1=Removed window
+    info_removed_p2=from exceptions 
+    info_added_p1=Added window
+    info_added_p2=to exceptions
+
+    tooltip_ignore=Focus the window to ignore/unignore and press F12!!  Press F11 to cancel.
+
+    input_hotkey_title=Input the hotkey
+    input_hotkey=Select the hotkey you'd like to use to make GridMove go into Command Mode. ^ stands for ctrl, + stands for shift, ! stands for alt and # stands for Windows key.  E.G.: ^#g stands for ctrl+win+g. Notice that the order of the modifiers doesn't matter.
+    input_fastmove=Input the modifier keys for Fast Move, Please input the modifiers for Fast Move.  ^ stands for ctrl, + stands for shift,  ! stands for alt and # stands for Win key.  E.G. : ^# will make ctrl+windows+1 move the active window to the first area.  Notice that their order doesn't matter.
+    input_gridorder=Input an order for the grid Cycle, Just type the names as found in the "templates" menu item, separated by commas ','.
+    input_edgetime=Input the delay for the edge method, Please input the delay before the grid comes up   when a window is dragged to the edge of the screen.
+    input_titlesize=Input the size of the title of windows, Please input the number of pixels to be considered as the title of a window for the LButton drag method.
+
+    helper_1=You can now select where to drop the window.
+    helper_2=You may now drag the window  to go into drop zone mode
+    helper_3=If you keep the mouse here  drop zone mode will be activated
+    helper_4=You can now drag the window to the edge of the screen  to activate drop zone mode. 
+=
