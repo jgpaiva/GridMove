@@ -1,0 +1,117 @@
+<?xml version="1.0" ?>
+<XML_DIZ_INFO>
+	<MASTER_PAD_VERSION_INFO>
+		<MASTER_PAD_VERSION>2.02</MASTER_PAD_VERSION>
+		<MASTER_PAD_EDITOR>PADGen 2.0.2.30 http://www.padgen.org</MASTER_PAD_EDITOR>
+		<MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
+	</MASTER_PAD_VERSION_INFO>
+	<Company_Info>
+		<Company_Name>DonationCoder</Company_Name>
+		<Address_1>M.Hinn 401 Ginger Bend Drive, #212</Address_1>
+		<Address_2 />
+		<City_Town>Champaign</City_Town>
+		<State_Province>IL </State_Province>
+		<Zip_Postal_Code>61822</Zip_Postal_Code>
+		<Country>United States</Country>
+		<Company_WebSite_URL>http://www.DonationCoder.com</Company_WebSite_URL>
+		<Contact_Info>
+			<Author_First_Name>Joao</Author_First_Name>
+			<Author_Last_Name>Paiva</Author_Last_Name>
+			<Author_Email>jgpaiva@gmail.com</Author_Email>
+			<Contact_First_Name>Joao</Contact_First_Name>
+			<Contact_Last_Name>Paiva</Contact_Last_Name>
+			<Contact_Email>jgpaiva@gmail.com</Contact_Email>
+		</Contact_Info>
+		<Support_Info>
+			<Sales_Email>jgpaiva@gmail.com</Sales_Email>
+			<Support_Email>jgpaiva@gmail.com</Support_Email>
+			<General_Email>jgpaiva@gmail.com</General_Email>
+			<Sales_Phone />
+			<Support_Phone />
+			<General_Phone />
+			<Fax_Phone />
+		</Support_Info>
+	</Company_Info>
+	<Program_Info>
+		<Program_Name>GridMove</Program_Name>
+		<Program_Version>1.19</Program_Version>
+		<Program_Release_Month>08</Program_Release_Month>
+		<Program_Release_Day>19</Program_Release_Day>
+		<Program_Release_Year>2007</Program_Release_Year>
+		<Program_Cost_Dollars />
+		<Program_Cost_Other_Code>EUR</Program_Cost_Other_Code>
+		<Program_Cost_Other />
+		<Program_Type>Freeware</Program_Type>
+		<Program_Release_Status>New Release</Program_Release_Status>
+		<Program_Install_Support>No Install Support</Program_Install_Support>
+		<Program_OS_Support>Windows2000,WinXP</Program_OS_Support>
+		<Program_Language>English</Program_Language>
+		<Program_Change_Info />
+		<Program_Specific_Category>Utilities</Program_Specific_Category>
+		<Program_Category_Class>System Utilities::Shell Tools</Program_Category_Class>
+		<Program_System_Requirements />
+		<File_Info>
+			<File_Size_Bytes>749568</File_Size_Bytes>
+			<File_Size_K>750</File_Size_K>
+			<File_Size_MB>0.75</File_Size_MB>
+		</File_Info>
+		<Expire_Info>
+			<Has_Expire_Info>N</Has_Expire_Info>
+			<Expire_Count />
+			<Expire_Based_On>Days</Expire_Based_On>
+			<Expire_Other_Info />
+			<Expire_Month />
+			<Expire_Day />
+			<Expire_Year />
+		</Expire_Info>
+	</Program_Info>
+	<Program_Descriptions>
+		<English>
+			<Keywords>Window Management, Organization, Resize</Keywords>
+			<Char_Desc_45>A windows management tool to organize windows</Char_Desc_45>
+			<Char_Desc_80>A windows management tool that can quickly arrange windows into desktop grids</Char_Desc_80>
+			<Char_Desc_250>GridMove is a program that aims at making windows management easier. It does so by defining a visual grid on the desktop, to which windows can be dropped. This program comes bundled with several predifined grid templates that can be customized.</Char_Desc_250>
+			<Char_Desc_450>GridMove is a program that aims at making windows management easier. It does so by defining a visual grid on the desktop, to which windows can easily  be snapped. This program comes bundled with some predifined grid templates, that can be swaped with one click, but also has ways of creating custom grids or sharing grids made by others. GridMove makes moving and resizing windows, and general desktop organization as easy as drag and drop.</Char_Desc_450>
+			<Char_Desc_2000>GridMove is a windows management tool that can quickly arrange windows into desktop grids.
+It does so by defining a visual grid on the desktop, to which windows can easily be snapped. 
+This program comes bundled with some predifined grid templates, that can be swaped with one click, but also features the possibility of creating custom grids or sharing grids made by others.
+
+GridMove makes moving windows, resizing windows, displaying them on cascade or on mosaic, making them on top or anything you can think of as easy as drag and drop. 
+
+This tool was made taking in mind those who own big screens and keep organizing their windows. This program is specially useful for anyone that keeps more than 1 window on the screen at one time, because it helps the user to maximize the usable space of the monitor, by resizing the windows in a much easier way than moving and resizing them one by one.
+
+Thanks to its simple interaction methods, GridMove becomes intuitive and fast, helping you to improve your workflow.
+
+Also, since it's latest release, GridMove is also fully expandable. This is due to it's new function that allows a custom grid to include elements that can run any local file.
+
+It features:
+	- Several pre-made grid templates that can be easily swaped
+	- 3 different interaction methods to suit everyone's likes
+	- Ability to set windows on top and maximize them vertically or horizontally
+	- Full keyboard support, which can organize windows with one hotkey press
+	- Customizable interface
+	- Possibility to create dynamic custom grids
+	- Complete help file
+	- Full MultiMonitor Support</Char_Desc_2000>
+		</English>
+	</Program_Descriptions>
+	<Web_Info>
+		<Application_URLs>
+			<Application_Info_URL>http://www.donationcoders.com/jgpaiva/gridmove.html</Application_Info_URL>
+			<Application_Order_URL />
+			<Application_Screenshot_URL>http://jgpaiva.donationcoders.com/CS/GridMove/GridMoveSmall.gif</Application_Screenshot_URL>
+			<Application_Icon_URL>http://jgpaiva.donationcoders.com/CS/GridMove/GridMove.jpg</Application_Icon_URL>
+			<Application_XML_File_URL>http://jgpaiva.donationcoders.com/CS/GridMove/GridMovePad.xml</Application_XML_File_URL>
+		</Application_URLs>
+		<Download_URLs>
+			<Primary_Download_URL>http://jgpaiva.donationcoders.com/CS/GridMove/GridMoveSetup.exe</Primary_Download_URL>
+			<Secondary_Download_URL />
+			<Additional_Download_URL_1 />
+			<Additional_Download_URL_2 />
+		</Download_URLs>
+	</Web_Info>
+	<Permissions>
+		<Distribution_Permissions />
+		<EULA />
+	</Permissions>
+</XML_DIZ_INFO>

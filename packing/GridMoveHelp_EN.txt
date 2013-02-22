@@ -1,0 +1,261 @@
+GridMove v1.19.x
+Welcome to the GridMove help file.
+This file contains all the information you need about this program.
+Please go to http://jgpaiva.donationcoder.com/gridmove.html for more
+information about gridmove and for the latest releases.
+If you have any doubt, don't think twice, just to go by its forum 
+section:
+http://www.donationcoder.com/Forums/bb/index.php?topic=3824 
+
+
+Index:
+  1 - (line  30) Introduction
+  2 - (line  44) Interaction
+    2.1 - LButton Drag
+    2.2 - Middle Mouse Button Drag 
+    2.3 - Edge Drag 
+  3 - (line  73) Templates
+    3.1 - Selecting a grid
+    3.2 - Grid elements
+    3.3 - Cicling Through Grids
+  4 - (line 117) Keyboard Hotkeys
+    4.1 - The Command mode
+    4.2 - FastMove
+  5 - (line 122) Options
+  6 - (line 151) Creating custom grids
+    6.1 - Basic Custom Grids
+    6.2 - Inserting Special Grid elements 
+  7 - (line 230) Credits
+
+**********************************************************************
+   1 - Introduction
+
+  GridMove is a program destined at making windows management easier.
+  It helps you with this task by defining a layout similar to a grid
+on your desktop, to which you can easily snap windows. 
+  This program comes bundled with some predifined grid templates 
+(which should be about enought for everyone), but also has ways of 
+creating your own grid or using other people's grids.
+  While this file is close to complete, don't forget to visit
+gridmove's forum topic where you can discuss upcoming features, or
+find better explanations for the workings of the program.  
+
+
+**********************************************************************
+  2 - Interaction
+
+  This section will show you how to interact with the program, i.e.
+how to make the windows snap to the grid.
+  The whole concept of GridMove revolves around the drop-zone mode.
+This is when the grid is up and you can select the places where to
+snap the active window. Just hover over the area you'd like to
+activate and drop the window. 
+  There are 3 ways to go into drop zone mode.
+  
+  2.1 - LButton Drag
+  This method consists of dragging the window by its title. When you
+drag a window by a place close to the left on its titlebar (the 
+default is a rectangle 100 pixels wide, but it can be customized), 
+you'll go into drop zone mode. 
+
+  2.2 - MButton Drag
+  This method consists of dragging a window using the middle mouse
+button.
+  It's that simple, just press the middle mouse button, and drag the
+window. This will make the drop zone come up, and you can drop the
+window where you like.
+
+  2.3 - Edge Drag
+  This method consists of grabbing a window by it's title, dragging
+it to the edge of the screen and keeping it there for a (customizable) 
+period of time. This will take you to drop zone mode. 
+
+**********************************************************************
+  3 - Templates
+  
+  3.1 - Selecting a grid
+  Now that you know how to use the basics of the program, you're ready
+to learn it's best potentials. If you've never changed any option of
+the program, you should be using a simple grid made out of 3 parts.
+That's not very useful, right?
+  But GridMove currently comes packed with 6 default grids. To select
+any of them, just right click it's tray icon and select "templates"
+from the menu .
+  Of course, if you're bored with the default grids, you can always
+create you're own or use other people's grids. This is possible
+because grids can be stored in .grid files and loaded through the
+"browse" option on the templates menu. Also, if the .grid files are
+placed in the Grids folder, they are loaded at the start of the
+script, and will be displayed in the templates menu. 
+
+  3.2 - Grid elements 
+  While the first 4 grids are quite simple, the "edge grid" has some
+special elements that are worth mentioning. If you hover over the grid
+element on the top (6), you'll notice that it doesn't work like the
+other elements do. That's because it is used to maximize vertically a
+window. The element on the left of the screen (7) has a similar
+behaviour: it maximizes horizontally. On the middle of the screen,
+below the element 5, there's "on top", "maximize" and "last size".
+While "on top" and maximize are quite straight-forward (the first
+toggled the "on top" state of a window and the later maximizes it),
+the "last size" is a special element. It's used to make the window
+be moved to the size it had before being moved by gridmove. This is 
+specially useful if you snapped a window inadvertedly and wanted to 
+get back to the previous state.
+
+  3.3 - Cicling Through Grids
+  Most probably, you'd like to use parts of 2 or more grids. You can
+acomplish this in 2 ways: either by creating your own grid (see
+section 6) or by switching constantly through them.
+  To switch the grid you're currently using, you could right-click the
+tray icon and select another one from the templates menu, but this
+isn't very practical. So, you can use the fast switch method. Just
+right-click when on drop zone mode, and GridMove will switch to the
+next grid on it's list. (see section 5 for info on how to change the
+list). This is also a practical way to avoid having a cluttered grid!
+
+**********************************************************************
+  4 - Keyboard Hotkeys
+
+  The following hotkeys can be configured through the tray menu -> 
+hotkeys.
+
+  4.1 - The command mode
+  By pressing WIN+G (g for Grid/GridMove), you'll make GridMove go into
+Command mode. The grid will come up, and you'll have a small box in
+the middle of the screen. GridMove will now wait for you to press
+something. If you press esc, it'll quit Command mode.
+  Command mode is very useful for moving a window somewhere real fast,
+or for cicling grids using the keyboard. 
+  If you press a number, the window will be moved to the corresponding
+grid part.
+  If you press N GridMove will switch to the next grid on its list.
+  If you press M, the window's maximize state will be toggled.
+  If you press 0, the window will be minimized.  
+  If you press R, the script will be reloaded.
+
+  4.2 - FastMove
+  FastMove is a faster alternative to Command mode.
+  /*incomplete*/
+
+
+***********************************************************************
+  5 - Options
+
+  While being a quite simple program, GridMove features quite a few
+options. These can be reached by right-clicking the tray icon and
+selecting the sub-menu "options".
+  In this menu, there are 8 items.
+  "Show Grid" is self-explanatory. If this option is active, the grid
+is shown when on drop zone mode, if it's inactive, the grid isn't show.
+  "Show Numbers On Grid" is also self-explanatory.
+  The next three options toggle the use of the 3 interaction methods.
+If one isn't active, the corresponding method can't be used.
+(sometimes is necessary to turn the MButton drag method off, since
+some programs use the Middle Mouse Button for other actions, and
+GridMove might interfeer).
+  The "Set Edge Time" option asks you to input a value which has to be
+in miliseconds and represents the time the cursor needs to rest in the
+edge of the screen for the grid to come up, when using the edge drag
+method. (see section 2.3 for more info).
+  The "Set Title Size" option asks you to input a numeric value, which
+represents the number of pixels that will be considered as the
+width of the activation rectangle for the LButton Drag. (see section
+2.1).
+  The "Set Grid Order" option allows you to change the list of grids
+that will be used when cicling through templates. (see section 3.3)
+This list is a comma-separated value, which means you need to input
+several names of grids separated by commas (whithout spaces around
+commas). You can use the names of the default templates
+(mentioned at the dialog), or the path for .grid files.
+
+***********************************************************************
+  6 - Creating Custom Grids
+
+  6.1 - Basic Custom Grids
+  For those that aren't happy with the default templates, and want to
+improve their experience with the program, there's the option of doing
+their own grid.
+  As mentioned earlier, the custom grids are made out of files with
+the .grid extension. The syntax of these files is very similar to a
+.ini file. After it's first run, gridmove unpacks some grids to it's
+main directory, and those can be altered and loaded in the program. 
+  The first section, [Groups] only contains one key: NumberOfGroups.
+This key represets the number of elements that the file contains.
+  After that section, there's one section for each grid element. The
+section is identified by a number, and the numbers must start in 1 and
+to all the way to the number in the NumberOfGroups key.
+  In each numbered group, there's 8 keys, divided into 2 groups.
+  The Trigger group (TriggerTop, TriggerLeft, TriggerBottom and
+TriggerRight) represent the coordinates of the lines that will be
+drawn in the screen when the program is in Drop Zone Mode.
+  The Grid group represents the coordinates to where the window will
+be moved.
+  If you look at the bundled .grid files, you'll see that some words
+appear on the fields mentioned earlier. These are variables. Since a
+.grid file should be able to be shared, it is supposed to not be
+dependable of the size of the screen. So, it's possible to use such
+variables as [Monitor1Top], which represents the coordinate top of the
+first monitor. There are several variables which can be used. Here's
+the list:
+
+  [Monitor1Top]
+  [Monitor1Left]
+  [Monitor1Bottom]
+  [Monitor1Right]
+  [Monitor1Width]
+  [Monitor1Height] 
+  The 6 variables above represent the workable area of the screen of
+the first monitor. This means that if you have the taskbar at the
+bottom of the screen, it won't consider that area as part of the
+screen. If you don't want it to work like that, look at the following
+variables:
+
+  
+  [MonitorReal1Top]
+  [MonitorReal1Left]
+  [MonitorReal1Bottom]
+  [MonitorReal1Right]
+  [MonitorReal1Width]
+  [MonitorReal1Height] 
+  These variables are similar to the ones above, but represent the
+whole area of the first screen, including the taskbar and other
+similar dockable objects.
+
+  But GridMove has support for multi-monitor. This means that the
+grids can also be used in monitors other than the first. This is
+obtained by replacing 1 with the number of any other monitor. Also
+don't worry if you use a grid that is created for multiple monitors on
+a single monitor layout, GridMove will ignore the parts that are
+supposed to appear on non-existant monitors.
+
+  6.2 - Inserting Special grid elements
+  As mentioned in section 3.2, there are some special grid elemets
+that have effects on your windows other than moving them around. These
+can also be included on a custom grid.
+  If you want to create a grid element that maximizes vertically, like
+edge grid's 6th element, set GridTop to [Monitor1Top] and GridBottom
+to [Monitor1Bottom], so that the window will be Maximized vertically,
+and then set GridLeft and GridRight to "WindowWidth" (without the
+quotes), so that the window's width will be unchanged. To have the
+Horizontal Maximization, it's a similar process. Set GridTop and
+GridBottom to "WindowHeight" (without the quotes), GridLeft to
+[Monitor1Left] and GridRight to [Monitor1Right].
+  To have the OnTop, the Maximize or the Restore elements, it's even
+simpler: just set all the Grid keys to "AlwaysOnTop", "Maximize" or
+"Restore", respectively.
+
+
+***********************************************************************
+  7 - Credits
+  This program is part of the DonationCoder.com site, and i have to
+thank Mouser for getting me the webspace for it, and for setting up
+such a great site which lead to the making of this program.
+  The creator of the bright original idea was Nudone, to witch i thank
+very much, since he invented most of the concepts, helped in all the
+phases of development, and along with Mouser, was very patient with
+all the testing and bug fixing.
+  I'm very glad the people at DonationCoder.com helped me in making
+this program, it sure came out fantastic, and it's good to know that
+it is useful to it's users!
+  Thank you!! 

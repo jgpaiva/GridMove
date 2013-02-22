@@ -1,0 +1,86 @@
+[Groups]
+
+NumberOfGroups = 9
+
+[1]
+
+  TriggerTop   = [Monitor1Top]
+  TriggerLeft  = [Monitor1Left] + [Monitor1Width] / 2 - 50
+  TriggerBottom= [Monitor1Top] + 35
+  TriggerRight = [Monitor1Left] + [Monitor1Width] / 2 + 50
+  
+  GridTop   = Restore
+  GridLeft  = Restore
+  GridBottom= Restore
+  GridRight = Restore
+
+[2]
+
+  TriggerTop   = [Monitor1Top]
+  TriggerLeft  = [Monitor1Left]
+  TriggerBottom= [Monitor1Bottom]
+  TriggerRight = [Monitor1Left] + [Monitor1Width] /2
+
+  
+[3]
+
+  TriggerTop   = [Monitor1Top]
+  TriggerLeft  = [Monitor1Left] + [Monitor1Width] /2
+  TriggerBottom= [Monitor1Bottom]
+  TriggerRight = [Monitor1Right]
+
+
+[4]
+
+  TriggerTop   = [Monitor2Top]
+  TriggerLeft  = [Monitor2Left] + [Monitor2Width] / 2 - 50
+  TriggerBottom= [Monitor2Top] + 35
+  TriggerRight = [Monitor2Left] + [Monitor2Width] / 2 + 50
+  
+  GridTop   = Restore
+  GridLeft  = Restore
+  GridBottom= Restore
+  GridRight = Restore
+
+[5]
+
+  TriggerTop   = [Monitor2Top]
+  TriggerLeft  = [Monitor2Left]
+  TriggerBottom= [Monitor2Bottom]
+  TriggerRight = [Monitor2Left] + [Monitor2Width] /2
+
+  
+[6]
+
+  TriggerTop   = [Monitor2Top]
+  TriggerLeft  = [Monitor2Left] + [Monitor2Width] /2
+  TriggerBottom= [Monitor2Bottom]
+  TriggerRight = [Monitor2Right]
+
+[7]
+
+  TriggerTop   = [Monitor3Top]
+  TriggerLeft  = [Monitor3Left] + [Monitor3Width] / 2 - 50
+  TriggerBottom= [Monitor3Top] + 35
+  TriggerRight = [Monitor3Left] + [Monitor3Width] / 2 + 50
+  
+  GridTop   = Restore
+  GridLeft  = Restore
+  GridBottom= Restore
+  GridRight = Restore
+
+[8]
+
+  TriggerTop   = [Monitor3Top]
+  TriggerLeft  = [Monitor3Left]
+  TriggerBottom= [Monitor3Bottom]
+  TriggerRight = [Monitor3Left] + [Monitor3Width] /2
+
+  
+[9]
+
+  TriggerTop   = [Monitor3Top]
+  TriggerLeft  = [Monitor3Left] + [Monitor3Width] /2
+  TriggerBottom= [Monitor3Bottom]
+  TriggerRight = [Monitor3Right]
+

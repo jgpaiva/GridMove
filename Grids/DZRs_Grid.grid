@@ -1,0 +1,15 @@
+[Groups]
+ 
+  NumberOfGroups = 6
+ 
+[1]
+
+  TriggerTop    = [Monitor1Top]
+  TriggerLeft   = [Monitor1Left] + [Monitor1Width] * 0.25
+  TriggerBottom = [Monitor1Bottom]
+  TriggerRight  = [Monitor1Right] - [Monitor1Width] * 0.25
+  GridTop       = [Monitor1Top]                           
+  GridLeft      = [Monitor1Left] + [Monitor1Width] * 0.25 
+  GridBottom    = [Monitor1Bottom]                        
+  GridRight     = [Monitor1Right] - [Monitor1Width] * 0.25
+

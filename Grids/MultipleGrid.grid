@@ -1,0 +1,69 @@
+[Groups]
+ 
+  NumberOfGroups = 1
+ 
+[1]
+
+  TriggerTop    = [Monitor1Top] + [Monitor1Height] * 0.4
+  TriggerLeft   = [Monitor1Left] + [Monitor1Width] * 0.4 
+  TriggerBottom = [Monitor1Top] + [Monitor1Height] * 0.6
+  TriggerRight  = [Monitor1Left] + [Monitor1Width] * 0.6
+  GridTop       = Run
+  GridLeft      = Plugins\MaximizeWindow.exe
+  GridBottom    = Maximize Window
+  GridRight     = Plugins\
+
+[2]
+ 
+  TriggerTop    = [Monitor1Top]
+  TriggerLeft   = [Monitor1Left]
+  TriggerBottom = [Monitor1Bottom]
+  TriggerRight  = [Monitor1Left] + [Monitor1Width] / 2
+  GridTop       = [Monitor1Top]
+  GridLeft      = [Monitor1Left]
+  GridBottom    = [Monitor1Bottom]
+  GridRight     = [Monitor1Left] + [Monitor1Width] / 2
+ 
+[3]
+ 
+  TriggerTop    = [Monitor1Top]
+  TriggerLeft   = [Monitor1Left] + [Monitor1Width] / 2
+  TriggerBottom = [Monitor1Bottom]
+  TriggerRight  = [Monitor1Right]
+  GridTop       = [Monitor1Top]
+  GridLeft      = [Monitor1Left] + [Monitor1Width] / 2
+  GridBottom    = [Monitor1Bottom]
+  GridRight     = [Monitor1Right]
+
+[4]
+
+  TriggerTop    = [Monitor2Top] + [Monitor2Height] * 0.4
+  TriggerLeft   = [Monitor2Left] + [Monitor2Width] * 0.4 
+  TriggerBottom = [Monitor2Top] + [Monitor2Height] * 0.6
+  TriggerRight  = [Monitor2Left] + [Monitor2Width] * 0.6
+  GridTop       = Run
+  GridLeft      = Plugins\MaximizeWindow.exe
+  GridBottom    = Maximize Window
+  GridRight     = Plugins\
+ 
+[5]
+ 
+  TriggerTop    = [Monitor2Top]
+  TriggerLeft   = [Monitor2Left]
+  TriggerBottom = [Monitor2Top] + [Monitor2Height] / 2
+  TriggerRight  = [Monitor2Right]
+  GridTop       = [Monitor2Top]
+  GridLeft      = [Monitor2Left]
+  GridBottom    = [Monitor2Top] + [Monitor2Height] / 2
+  GridRight     = [Monitor2Right]
+ 
+[6]
+ 
+  TriggerTop    = [Monitor2Top] + [Monitor2Height] / 2
+  TriggerLeft   = [Monitor2Left]
+  TriggerBottom = [Monitor2Bottom]
+  TriggerRight  = [Monitor2Right]
+  GridTop       = [Monitor2Top] + [Monitor2Height] / 2
+  GridLeft      = [Monitor2Left]
+  GridBottom    = [Monitor2Bottom]
+  GridRight     = [Monitor2Right]

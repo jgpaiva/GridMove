@@ -1,0 +1,29 @@
+END USER LICENSE AGREEMENT
+Software License Agreement for GridMove
+
+IMPORTANT- PLEASE READ CAREFULLY: BY INSTALLING THE SOFTWARE (AS DEFINED BELOW), COPYING THE SOFTWARE AND/OR CLICKING ON THE 'ACCEPT' BUTTON BELOW, YOU (EITHER ON BEHALF OF YOURSELF AS AN INDIVIDUAL OR ON BEHALF OF AN ENTITY AS ITS AUTHORIZED REPRESENTATIVE) AGREE TO ALL OF THE TERMS OF THIS END USER LICENSE AGREEMENT ('AGREEMENT') REGARDING YOUR USE OF THE SOFTWARE.  IF YOU DO NOT AGREE WITH ALL OF THE TERMS OF THIS AGREEMENT, CLICK ON THE 'NO' BUTTON. THIS WILL CANCEL THE INSTALLATION.
+
+1. GRANT OF LICENSE: Subject to the terms below, DonationCoder hereby grants you a Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License. For more details on this license, see the included License.txt file.
+
+2. DISCLAIMER OF WARRANTY: 
+YOU AGREE THAT DonationCoder HAS MADE NO EXPRESS WARRANTIES, ORAL OR WRITTEN, TO YOU REGARDING THE PRODUCTS AND THAT THE PRODUCTS ARE BEING PROVIDED TO YOU 'AS IS' WITHOUT WARRANTY OF ANY KIND.  DonationCoder DISCLAIMS ANY AND ALL OTHER WARRANTIES, WHETHER EXPRESSED, IMPLIED, OR STATUTORY. YOUR RIGHTS MAY VARY DEPENDING ON THE STATE IN WHICH YOU LIVE.
+ DonationCoder SHALL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, COVER, RELIANCE, OR CONSEQUENTIAL DAMAGES RESULTING FROM THE USE OF THIS PRODUCT.
+
+3. LIMITATION OF LIABILITY: You use this program solely at your own risk.
+IN NO EVENT SHALL DonationCoder BE LIABLE TO YOU FOR ANY DAMAGES, INCLUDING BUT NOT LIMITED TO ANY LOSS, OR OTHER INCIDENTAL, INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND ARISING OUT OF THE USE OF THE SOFTWARE, EVEN IF DonationCoder HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IN NO EVENT WILL DonationCoder BE LIABLE FOR ANY CLAIM, WHETHER IN CONTRACT, TORT, OR ANY OTHER THEORY OF LIABILITY, EXCEED THE COST OF THE SOFTWARE. THIS LIMITATION SHALL APPLY TO CLAIMS OF PERSONAL INJURY TO THE EXTENT PERMITTED BY LAW. 
+
+4. TERMINATION: This Agreement shall terminate automatically if you fail to comply with the limitations described in this Agreement. No notice shall be required to effectuate such termination. Upon termination, you must remove and destroy all copies of the Software. 
+
+5. MISCELLANEOUS:
+
+Severability.
+In the event of invalidity of any provision of this Agreement, the parties agree that such invalidity shall not affect the validity of the remaining portions of this Agreement.
+Export.
+You agree that you will not export or re-export the Software outside of the jurisdiction in which you obtained it without the appropriate United States or foreign government licenses.
+Governing Law.  
+This Agreement will be governed by the laws of the State of Finland as they are applied to agreements between Finland residents entered into and to be performed entirely within Finland. The United Nations Convention on Contracts for the International Sale of Goods is specifically disclaimed.
+Entire Agreement.  
+You agree that this is the entire agreement between you and DonationCoder, which supersedes any prior agreement, whether written or oral, and all other communications between DonationCoder and you relating to the subject matter of this Agreement. 
+Reservation of rights.  
+
+All rights not expressly granted in this Agreement are reserved by DonationCoder.

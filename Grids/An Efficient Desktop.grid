@@ -1,0 +1,137 @@
+;;;;
+;; Grid template for JGPaiva's GridMove application
+;; http://jgpaiva.donationcoders.com/gridmove.html
+;; This grid created by Allen Day // allen@theprawn.com
+;;;;
+
+[Groups]
+
+NumberOfGroups = 9
+
+; Big window, top left aligned. (web browser for me, typically)
+
+[1]
+
+  TriggerTop   = [Monitor1Top]
+  TriggerLeft  = [Monitor1Left]
+  TriggerBottom= [Monitor1Top] + [Monitor1Height]/10
+  TriggerRight = [Monitor1Left] + [Monitor1Width]/10
+  
+  GridTop   = [Monitor1Top]
+  GridLeft  = [Monitor1Left]
+  GridBottom= [Monitor1Top] + [Monitor1Height] - [Monitor1Height]/10
+  GridRight = [Monitor1Right] - [Monitor1Width]/10*1.5
+
+; Window of focus, large but not full screen, middle/center aligned
+; More often than not file explorer, text editor, etc.
+  
+[2]
+
+  TriggerTop   = [Monitor1Top] + [Monitor1Height] /10 * 4
+  TriggerLeft  = [Monitor1Left] + [Monitor1Width] /10 * 4
+  TriggerBottom= [Monitor1Bottom] - [Monitor1Height] /10 * 4
+  TriggerRight = [Monitor1Right] - [Monitor1Width] /10 * 4
+  
+  GridTop   = [Monitor1Top] + [Monitor1Height] /10
+  GridLeft  = [Monitor1Left] + [Monitor1Width] /10
+  GridBottom= [Monitor1Bottom] - [Monitor1Height] /10
+  GridRight = [Monitor1Right] - [Monitor1Width] /10
+
+; Like primary point 2, 3 is centered -- it's a bit smaller, however.
+
+[3]
+
+  TriggerTop   = [Monitor1Top] + [Monitor1Height] /10 * 6
+  TriggerLeft  = [Monitor1Left] + [Monitor1Width] /10 * 3.5
+  TriggerBottom= [Monitor1Top] + [Monitor1Height] /10 * 6.5
+  TriggerRight = [Monitor1Left] + [Monitor1Width] /10 * 4
+  
+  GridTop   = [Monitor1Top] + [Monitor1Height] /10*2
+  GridLeft  = [Monitor1Left] + [Monitor1Width] /10*2
+  GridBottom= [Monitor1Bottom] - [Monitor1Height] /10*2
+  GridRight = [Monitor1Right] - [Monitor1Width] /10*2
+
+; Group 4 is like group 2, but full width
+
+[4]
+
+  TriggerTop   = [Monitor1Top] + [Monitor1Height] /10 * 4
+  TriggerLeft  = [Monitor1Left] + [Monitor1Width] /10 * 3.5
+  TriggerBottom= [Monitor1Bottom] - [Monitor1Height] /10 * 4
+  TriggerRight = [Monitor1Right] - [Monitor1Width] /10 * 6
+  
+  GridTop   = [Monitor1Top] + [Monitor1Height] /10
+  GridLeft  = [Monitor1Left]
+  GridBottom= [Monitor1Bottom] - [Monitor1Height] /10
+  GridRight = [Monitor1Right]
+
+; Group 5 is group two with max height
+
+[5]
+
+  TriggerTop   = [Monitor1Top] + [Monitor1Height] /10 * 6
+  TriggerLeft  = [Monitor1Left] + [Monitor1Width] /10 * 4
+  TriggerBottom= [Monitor1Bottom] - [Monitor1Height] /10 * 3.5
+  TriggerRight = [Monitor1Right] - [Monitor1Width] /10 * 4
+  
+  GridTop   = [Monitor1Top]
+  GridLeft  = [Monitor1Left] + [Monitor1Width] /10
+  GridBottom= [Monitor1Bottom]
+  GridRight = [Monitor1Right] - [Monitor1Width] /10
+
+
+
+; Groups 6 and 7 are displayed as next to grid 2, though that's not how they are used
+; 6 and 7 are actually used to make two windows sit side by side in the space occupied by 2
+; Groups 8-9 are used for tiling windows next to one another, typically my text editor.
+
+[6]
+
+  TriggerTop   = [Monitor1Top] + [Monitor1Height] /10 * 4
+  TriggerLeft  = [Monitor1Left] + [Monitor1Width] /10 * 6
+  TriggerBottom= [Monitor1Bottom] - [Monitor1Height] /10 * 4
+  TriggerRight = [Monitor1Left] + [Monitor1Width] /10 * 6.5
+  
+  GridTop   = [Monitor1Top] + [Monitor1Height] /10
+  GridLeft  = [Monitor1Left] + [Monitor1Width] /10
+  GridBottom= [Monitor1Bottom] - [Monitor1Height] /10
+  GridRight = [Monitor1Right] - [Monitor1Width] /10*5
+
+[7]
+
+  TriggerTop   = [Monitor1Top] + [Monitor1Height] /10 * 4
+  TriggerLeft  = [Monitor1Left] + [Monitor1Width] /10 * 6.5
+  TriggerBottom= [Monitor1Bottom] - [Monitor1Height] /10 * 4
+  TriggerRight = [Monitor1Left] + [Monitor1Width] /10 * 7
+  
+  GridTop   = [Monitor1Top] + [Monitor1Height] /10
+  GridLeft  = [Monitor1Left] + [Monitor1Width] /10*5
+  GridBottom= [Monitor1Bottom] - [Monitor1Height] /10
+  GridRight = [Monitor1Right] - [Monitor1Width] /10
+
+; Like groups 6 & 7, groups 8 & 9 occupy the space of grid 2.
+; This time they tile vertically
+
+[8]
+
+  TriggerTop   = [Monitor1Top] + [Monitor1Height] /10 * 3.5
+  TriggerLeft  = [Monitor1Left] + [Monitor1Width] /10 * 4
+  TriggerBottom= [Monitor1Top] + [Monitor1Height] /10 * 4
+  TriggerRight = [Monitor1Right] - [Monitor1Width] /10 * 4
+  
+  GridTop   = [Monitor1Top] + [Monitor1Height] /10 * 5
+  GridLeft  = [Monitor1Left] + [Monitor1Width] /10
+  GridBottom= [Monitor1Bottom] - [Monitor1Height] /10
+  GridRight = [Monitor1Right] - [Monitor1Width] /10
+
+[9]
+
+  TriggerTop   = [Monitor1Top] + [Monitor1Height] /10 * 3
+  TriggerLeft  = [Monitor1Left] + [Monitor1Width] /10 * 4
+  TriggerBottom= [Monitor1Top] + [Monitor1Height] /10 * 3.5
+  TriggerRight = [Monitor1Right] - [Monitor1Width] /10 * 4
+  
+  GridTop   = [Monitor1Top] + [Monitor1Height] /10
+  GridLeft  = [Monitor1Left] + [Monitor1Width] /10
+  GridBottom= [Monitor1Bottom] - [Monitor1Height] /10 * 5
+  GridRight = [Monitor1Right] - [Monitor1Width] /10

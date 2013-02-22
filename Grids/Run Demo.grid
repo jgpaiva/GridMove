@@ -1,0 +1,75 @@
+[Groups]
+
+NumberOfGroups = 6
+
+[1]
+
+  TriggerTop   = [Monitor1Top]
+  TriggerLeft  = [Monitor1Left] + [Monitor1Width] /3
+  TriggerBottom= [Monitor1Bottom] - [Monitor1Height]/2
+  TriggerRight = [Monitor1Left] + [Monitor1Width] /3 * 2
+  
+  GridTop   = Run
+  GridLeft  = "Plugins\WindowPositions.exe store"
+  GridBottom= Store Position
+  GridRight = Plugins\
+  
+[2]
+
+  TriggerTop   = [Monitor1Bottom] - [Monitor1Height]/2 + 0.000001
+  TriggerLeft  = [Monitor1Left] + [Monitor1Width] /3
+  TriggerBottom= [Monitor1Bottom] 
+  TriggerRight = [Monitor1Left] + [Monitor1Width] /3 * 2
+  
+  GridTop   = Run
+  GridLeft  = "Plugins\WindowPositions.exe Load"
+  GridBottom= Load Position
+  GridRight = Plugins\
+  
+[3]
+
+  TriggerTop   = [Monitor2Top]
+  TriggerLeft  = [Monitor2Left] + [Monitor2Width] /3
+  TriggerBottom= [Monitor2Bottom] - [Monitor2Height]/2
+  TriggerRight = [Monitor2Left] + [Monitor2Width] /3 * 2
+  
+  GridTop   = Run
+  GridLeft  = "Plugins\WindowPositions.exe store"
+  GridBottom= StorePosition
+  GridRight = Plugins\
+  
+[4]
+
+  TriggerTop   = [Monitor2Bottom] - [Monitor2Height]/2 + 0.000001
+  TriggerLeft  = [Monitor2Left] + [Monitor2Width] /3
+  TriggerBottom= [Monitor2Bottom] 
+  TriggerRight = [Monitor2Left] + [Monitor2Width] /3 * 2
+  
+  GridTop   = Run
+  GridLeft  = "Plugins\WindowPositions.exe Load"
+  GridBottom= LoadPosition
+  GridRight = Plugins\
+  
+[5]
+
+  TriggerTop   = [Monitor3Top]
+  TriggerLeft  = [Monitor3Left] + [Monitor3Width] /3
+  TriggerBottom= [Monitor3Bottom] - [Monitor3Height]/2
+  TriggerRight = [Monitor3Left] + [Monitor3Width] /3 * 2
+  
+  GridTop   = Run
+  GridLeft  = "Plugins\WindowPositions.exe store"
+  GridBottom= StorePosition
+  GridRight = Plugins\
+  
+[6]
+
+  TriggerTop   = [Monitor3Bottom] - [Monitor3Height]/2 + 0.000001
+  TriggerLeft  = [Monitor3Left] + [Monitor3Width] /3
+  TriggerBottom= [Monitor3Bottom] 
+  TriggerRight = [Monitor3Left] + [Monitor3Width] /3 * 2
+  
+  GridTop   = Run
+  GridLeft  = "Plugins\WindowPositions.exe Load"
+  GridBottom= LoadPosition
+  GridRight = Plugins\

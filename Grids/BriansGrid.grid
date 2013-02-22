@@ -1,0 +1,27 @@
+[Groups]
+
+NumberOfGroups = 2
+
+[1]
+
+  TriggerTop   = [Monitor1Top]
+  TriggerLeft  = [Monitor1Left] + [Monitor1Width] /3
+  TriggerBottom= [Monitor1Bottom] - [Monitor1Height]/2
+  TriggerRight = [Monitor1Left] + [Monitor1Width] /3 * 2
+  
+  GridTop   = Run
+  GridLeft  = "Plugins\MaximizeWindow_OtherScreen.exe 2"
+  GridBottom= To Monitor2
+  GridRight = Plugins\
+  
+[2]
+
+  TriggerTop   = [Monitor1Bottom] - [Monitor1Height]/2 + 0.000001
+  TriggerLeft  = [Monitor1Left] + [Monitor1Width] /3
+  TriggerBottom= [Monitor1Bottom] 
+  TriggerRight = [Monitor1Left] + [Monitor1Width] /3 * 2
+  
+  GridTop   = Run
+  GridLeft  = "Plugins\MaximizeWindow_OtherScreen.exe 1"
+  GridBottom= To Monitor1
+  GridRight = Plugins\

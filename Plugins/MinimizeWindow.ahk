@@ -1,0 +1,3 @@
+#notrayicon
+WinMinimize,A
+return
