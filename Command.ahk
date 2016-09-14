@@ -290,7 +290,10 @@ MoveToGrid(GridToMove)
   if ShouldUseSizeMoveMessage(WinClass)
     SendMessage WM_ENTERSIZEMOVE, , , ,ahk_id %windowid%
 
-  WinMove, A, ,%GridLeft%,%GridTop%,%GridWidth%,%GridHeight%
+  if Windows10
+    WinSnap("ahk_id" windowid, GridLeft,GridTop, GridWidth, GridHeight)
+  else
+    WinMove, A, ,%GridLeft%,%GridTop%,%GridWidth%,%GridHeight%
 
   if ShouldUseSizeMoveMessage(WinClass)
     SendMessage WM_EXITSIZEMOVE, , , ,ahk_id %windowid%
