@@ -1,3 +1,6 @@
+15.09.2016 - Fix WinMove for Windows 10.
+------------------------
+
 GridMove
 ========
 
