@@ -1,9 +1,0 @@
-[01:12]	mouser: instead of saying
-[01:12]	mouser: "suggested on the following thread by nudone
-[01:12]	mouser: just say
-[01:12]	mouser: "Visit the ScreenZones web page: ..."
-[01:12]	mouser: and then on the web page
-
-[00:56]	mouser: you need to update help tab
-[00:56]	mouser: to tell about win+g
-
