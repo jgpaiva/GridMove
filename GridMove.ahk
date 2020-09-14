@@ -18,7 +18,7 @@
   UseFastMove := True
   FastMoveModifiers = #
   Exceptions = QuarkXPress,Winamp v1.x,Winamp PE,Winamp Gen,Winamp EQ,Shell_TrayWnd,32768,Progman,DV2ControlHost
-  MButtonExceptions = inkscape.exe 
+  MButtonExceptions = inkscape.exe
   MButtonTimeout = 0.3
   Transparency = 200
   SafeMode := True
@@ -75,8 +75,8 @@
     Traytip,GridMove,Reading INI,10
 
   ;goSub, showOptions
-    
-  
+
+
   GetScreenSize()       ;get the size of the monitors
   GetMonitorSizes()
   RectangleSize := 1
@@ -105,7 +105,7 @@
   GroupsShowing := False
   EdgeFlag := True
   MousePositionLock := False
-  WM_ENTERSIZEMOVE = 0x231 
+  WM_ENTERSIZEMOVE = 0x231
   WM_EXITSIZEMOVE = 0x232
 
 
@@ -113,8 +113,8 @@
   WindowX =
   WindowWidth =
   WindowHeight=
-  WindowXBuffer = 
-  WindowYBuffer = 
+  WindowXBuffer =
+  WindowYBuffer =
 
   ;if DebugMode
   ;  Traytip,GridMove,Creating the grid,10
@@ -140,7 +140,7 @@
     Hotkey, %FastMoveModifiers%Left,MoveToPrevious
   }
 
-  MPFlag := True 
+  MPFlag := True
   Settimer, MousePosition, 100
   ;Settimer, ReloadOnResolutionChange, 1000
 
@@ -155,7 +155,7 @@
 
 #maxthreadsperhotkey,1
 #singleinstance,force
-#InstallMouseHook 
+#InstallMouseHook
 #InstallKeybdHook
 #noenv
 
@@ -191,7 +191,7 @@ createTrayMenus()
   Menu,Tray, Tip, GridMove V%ScriptVersion%
   Menu,Tray, Add, %tray_updates%, EnableAutoUpdate
   Menu,Tray, Add, %tray_ignore%, AddToIgnore
-  
+
   if(Registered<>"quebec")
     Menu,Tray, Add, %tray_windows%, StartWithWindowsToggle
 
@@ -200,14 +200,14 @@ createTrayMenus()
       Menu,Tray,Check, %tray_windows%
     else
       Menu,Tray,UnCheck, %tray_windows%
- 
+
   createTemplatesMenu()
   Menu,Tray, Add, %tray_templates%, :templates_menu
   If(NoTrayIcon){
     msgbox,here
     menu, tray, NoIcon
   }else{
-    IfExist %A_ScriptDir%\Images\gridmove.ico  
+    IfExist %A_ScriptDir%\Images\gridmove.ico
       Menu,Tray, Icon,%A_ScriptDir%\Images\gridmove.ico
   }
   Menu,Tray, NoStandard
@@ -236,14 +236,14 @@ createTemplatesMenu()
   }
   Menu,templates_menu,add,,
   Menu,templates_menu, add,%tray_refresh%, RefreshTemplates
-    
+
   stringgetpos,out_pos,gridname,\,R1
   if out_pos <= 0
     stringgetpos,out_pos,gridname,/,R1
   if out_pos <= 0
     return
   stringlen, len, gridname
-  StringRight,out_GridName,gridname,% len - out_pos -1 
+  StringRight,out_GridName,gridname,% len - out_pos -1
   StringTrimRight,out_GridName2,out_GridName,5
   IfExist %A_ScriptDir%\Grids\%out_GridName2%.grid
     menu,templates_menu,check,%out_GridName2%
@@ -313,7 +313,7 @@ setColorTheme:
 createHotkeysMenu()
 {
   global
-  Menu,hotkeys_menu, add, %tray_usecommand%, Hotkeys_UseCommand 
+  Menu,hotkeys_menu, add, %tray_usecommand%, Hotkeys_UseCommand
   Menu,hotkeys_menu, add, %tray_commandhotkey%, Hotkeys_CommandHotkey
   Menu,hotkeys_menu, add, %tray_fastmove%, Hotkeys_UseFastMove
   Menu,hotkeys_menu, add, %tray_fastmovemodifiers%, Hotkeys_FastMoveModifiers
@@ -339,9 +339,9 @@ startWithWindowsQ()
   return false
 }
 
-;*******************Drop Zone Mode 
+;*******************Drop Zone Mode
 
-DropZoneMode:  
+DropZoneMode:
   DropZoneModeFlag := true
   gosub,showgroups
   Hotkey,RButton,on
@@ -359,13 +359,13 @@ DropZoneMode:
       Hotkey,Esc,off
       DropZoneModeFlag := false
       Critical, off
-      return      
-      }  
-  
+      return
+      }
+
     GetKeyState,State,%hotkey%,P
     If State = U
         break
-    
+
     MouseGetPos, MouseX, MouseY, window,
     flagLButton:=true
     Critical, on
@@ -377,7 +377,7 @@ DropZoneMode:
       TriggerRight  := %A_Index%TriggerRight
       TriggerLeft   := %A_Index%TriggerLeft
 
-      If (MouseY >= TriggerTop AND MouseY <= TriggerBottom 
+      If (MouseY >= TriggerTop AND MouseY <= TriggerBottom
           AND MouseX <= TriggerRight AND MouseX >= TriggerLeft)
       {
         GetGrid(A_Index)
@@ -395,7 +395,7 @@ DropZoneMode:
           GridLeft := GetMonitorLeft(MouseX,MouseY)
           GridWidth := GetMonitorRight(MouseX,MouseY) - GetMonitorLeft(MouseX,MouseY)
           GridHeight := GetMonitorBottom(MouseX,MouseY) - GetMonitorTop(MouseX,MouseY)
-        }         
+        }
 
         If not canceled
         {
@@ -417,8 +417,8 @@ DropZoneMode:
     Critical, off
     if flagLButton
       hideGui2()
-  }   
-  DropZoneModeFlag := false 
+  }
+  DropZoneModeFlag := false
   Gui,2:Hide
   Hotkey,RButton,off
   Hotkey,Esc,off
@@ -435,16 +435,16 @@ hideGui2()
     Gui,2: +ToolWindow +AlwaysOnTop -Disabled -SysMenu
   Gui,2: Show, x-10000 y-10000 w0 h0 NoActivate,% A_SPACE
 }
-  
+
 cancel:
   if not canceled
   {
-    canceled := True 
+    canceled := True
     GoSub, HideGroups
     Gui,2:Hide
   }
 return
-  
+
 ;*******************Mbutton method
 
 MButtonMove:
@@ -502,7 +502,7 @@ MousePosition:
     return
 
   KeyWait, LButton,U
-  KeyWait, LButton,D 
+  KeyWait, LButton,D
 
   SetBatchLines, -1
 
@@ -513,7 +513,7 @@ MousePosition:
   WinGetPos,WinLeft,WinTop,WinWidth,WinHeight,ahk_id%MouseWin%
   WinGet,WinStyle,Style,ahk_id %mousewin%
   WinGet,WindowId,Id,ahk_id %mousewin%
-  
+
   If Winclass in %Exceptions%
   {
     Settimer, MousePosition,10
@@ -540,20 +540,20 @@ MousePosition:
   AND (MouseControl = "" OR DisableTitleButtonsDetection))
     {
       Hotkey = LButton
-      sendinput {LButton up} 
+      sendinput {LButton up}
       GoSub,DropZoneMode
       Settimer, MousePosition,10
       return
     }
-  } 
-  else 
+  }
+  else
   {
-    If (LButtonDrag AND OldmouseX > TitleLeft 
+    If (LButtonDrag AND OldmouseX > TitleLeft
         AND OldMouseX < TitleLeft + 20 AND WinWidth > 170
         AND (MouseControl = "" OR  DisableTitleButtonsDetection))
     {
       Hotkey = LButton
-      sendinput {LButton up} 
+      sendinput {LButton up}
       GoSub,DropZoneMode
       Settimer, MousePosition,10
       return
@@ -586,7 +586,7 @@ MousePosition:
     EdgeFlagFound := false
     loop,%RectangleCount%
     {
-      if(mouseX >= EdgeRectangleXL%A_Index% && mouseX <= EdgeRectangleXR%A_Index% 
+      if(mouseX >= EdgeRectangleXL%A_Index% && mouseX <= EdgeRectangleXR%A_Index%
           && mouseY >= EdgeRectangleYT%A_Index% && mouseY <= EdgeRectangleYB%A_Index%)
       {
         EdgeFlagFound := true
@@ -643,7 +643,7 @@ SnapWindow:
     GridTop    :=0
     GridLeft   :=0
 
-    
+
     If (MouseY >= triggerTop AND MouseY <= triggerBottom
         AND MouseX <= triggerRight AND MouseX >= triggerLeft)
     {
@@ -651,7 +651,7 @@ SnapWindow:
 
       If GridTop = AlwaysOnTop
       {
-        WinSet, AlwaysOnTop, Toggle,A 
+        WinSet, AlwaysOnTop, Toggle,A
         return
       }
       If GridTop = Maximize
@@ -661,12 +661,12 @@ SnapWindow:
           WinRestore,A
         else
           PostMessage, 0x112, 0xF030,,, A,
-        return 
+        return
       }
       If GridTop = Run
       {
         Run,%GridLeft% ,%GridRight%
-        return              
+        return
       }
 
       WinRestore,A
@@ -683,7 +683,7 @@ SnapWindow:
       if ShouldUseSizeMoveMessage(WinClass)
         SendMessage WM_EXITSIZEMOVE, , , ,ahk_id %windowid%
       break
-    }  
+    }
   }
   If Moved
     StoreWindowState(WindowID,WinLeft,WinTop,WinWidth,WinHeight)
@@ -693,9 +693,9 @@ return
 GetGrid(number)
 {
   global
-  
+
   MouseGetPos, MouseX, MouseY, window,
-  
+
   GridTop := %number%GridTop
   GridBottom := %number%GridBottom
   GridRight := %number%GridRight
@@ -719,7 +719,7 @@ GetGrid(number)
       GridTop := MonitorTop
     GridBottom := GridTop + WinHeight
   }
-    
+
   If GridLeft = WindowWidth
   {
     MonitorRight := GetMonitorRight(MouseX, MouseY)
@@ -729,25 +729,25 @@ GetGrid(number)
       GridLeft := MonitorRight - WinWidth
     If (GridLeft < MonitorLeft)
       GridLeft := MonitorLeft
-    GridRight := GridLeft + WinWidth       
-  } 
+    GridRight := GridLeft + WinWidth
+  }
 
   If GridTop = restore
   {
     data := GetWindowState(WindowID)
-    If data   
-    { 
+    If data
+    {
       GridLeft   := WindowX
       GridRight  := WindowX + WindowWidth
       GridTop    := WindowY
-      GridBottom := WindowY + WindowHeight 
+      GridBottom := WindowY + WindowHeight
     }
     else
     {
       GridLeft   := WinLeft
       GridRight  := WinLeft + WinWidth
       GridTop    := WinTop
-      GridBottom := WinTop + WinHeight 
+      GridBottom := WinTop + WinHeight
     }
   }
 
@@ -771,7 +771,7 @@ GetGrid(number)
   else
     GridBottom := round(GridBottom)
 
-  GridWidth  := GridRight - GridLeft 
+  GridWidth  := GridRight - GridLeft
   GridHeight := GridBottom - GridTop
 }
 
@@ -831,19 +831,20 @@ creategroups:
   setGuiColors()
   loop,%NGroups%
   {
-    TriggerTop    := %A_Index%TriggerTop - ScreenTop
-    TriggerBottom := %A_Index%TriggerBottom - ScreenTop
-    TriggerLeft   := %A_Index%TriggerLeft - ScreenLeft
-    TriggerRight  := %A_Index%TriggerRight - ScreenLeft
-    TriggerHeight := TriggerBottom - TriggerTop 
+    PosIndex := %A_Index%PosNum
+    TriggerTop    := %PosIndex%TriggerTop - ScreenTop
+    TriggerBottom := %PosIndex%TriggerBottom - ScreenTop
+    TriggerLeft   := %PosIndex%TriggerLeft - ScreenLeft
+    TriggerRight  := %PosIndex%TriggerRight - ScreenLeft
+    TriggerHeight := TriggerBottom - TriggerTop
     TriggerWidth  := TriggerRight - TriggerLeft
-    GridTop       := %A_Index%GridTop
-    GridLeft      := %A_Index%GridLeft
-    
-    TextTop := %A_Index%TriggerTop - ScreenTop
-    TextTop += Round((%A_Index%TriggerBottom - %A_Index%TriggerTop) / 2 )- 11
-    TextLeft := %A_Index%TriggerLeft - ScreenLeft
-    TextLeft += Round((%A_Index%TriggerRight - %A_Index%TriggerLeft) / 2) - 5
+    GridTop       := %PosIndex%GridTop
+    GridLeft      := %PosIndex%GridLeft
+
+    TextTop := %PosIndex%TriggerTop - ScreenTop
+    TextTop += Round((%PosIndex%TriggerBottom - %PosIndex%TriggerTop) / 2 )- 11
+    TextLeft := %PosIndex%TriggerLeft - ScreenLeft
+    TextLeft += Round((%PosIndex%TriggerRight - %PosIndex%TriggerLeft) / 2) - 5
     RestoreLeft := TextLeft - 50
     tempTop := triggerTop - 1
     tempBottom := triggerBottom - 1
@@ -855,22 +856,22 @@ creategroups:
     Gui, add, Picture, Y%tempBottom% X%tempLeft% W%tempWidth% H3 ,%A_ScriptDir%\Images\%horizontalGrid%
     Gui, add, Picture, Y%tempTop% X%tempLeft%  W3 H%tempHeight% ,%A_ScriptDir%\Images\%verticalGrid%
     Gui, add, Picture, Y%tempTop% X%tempRight% W3 H%tempHeight% ,%A_ScriptDir%\Images\%verticalGrid%
-    
+
     shadowleft := textleft + 1
     shadowtop := texttop + 1
-    
+
     If ShowNumbersFlag
       If GridTop is number
         If GridLeft is number
-          If A_Index < 10 
+          If PosIndex < 10
           {
-            Gui, add, text, BackGroundTrans c%shadowcolor% X%ShadowLeft% Y%ShadowTop% ,%A_Index%
-            Gui, add, text, BackGroundTrans c%textcolor% X%TextLeft% Y%TextTop% ,%A_Index%
+            Gui, add, text, BackGroundTrans c%shadowcolor% X%ShadowLeft% Y%ShadowTop% ,%PosIndex%
+            Gui, add, text, BackGroundTrans c%textcolor% X%TextLeft% Y%TextTop% ,%PosIndex%
           }
           else
           {
-            Gui, add, text,% "X" ShadowLeft - 6 " Y" ShadowTop "c"shadowcolor  "BackGroundTrans" ,%A_Index%
-            Gui, add, text,% "X" TextLeft - 6 " Y" TextTop "c"textcolor "BackGroundTrans" ,%A_Index%
+            Gui, add, text,% "X" ShadowLeft - 6 " Y" ShadowTop "c"shadowcolor  "BackGroundTrans" ,%PosIndex%
+            Gui, add, text,% "X" TextLeft - 6 " Y" TextTop "c"textcolor "BackGroundTrans" ,%PosIndex%
           }
 
 
@@ -890,7 +891,7 @@ creategroups:
         Gui, add, text,c%shadowcolor% BackGroundTrans  X%RestoreUndoShadow% Y%ShadowTop% ,%A_Index%-Undo
         Gui, add, text,c%textcolor% BackGroundTrans  X%RestoreUndo% Y%TextTop% ,%A_Index%-Undo
       }
-      If GridTop = Maximize 
+      If GridTop = Maximize
       {
         Gui, add, text,c%shadowcolor% BackGroundTrans  X%RestoreLeftShadow% Y%ShadowTop% ,%A_Index%-Maximize
         Gui, add, text,c%textcolor% BackGroundTrans  X%RestoreLeft% Y%TextTop% ,%A_Index%-Maximize
@@ -908,7 +909,7 @@ creategroups:
         Gui, add, text,c%shadowcolor% BackGroundTrans  X%RestoreUndoShadow% Y%ShadowTop% ,Undo
         Gui, add, text,c%textcolor% BackGroundTrans  X%RestoreUndo% Y%TextTop% ,Undo
       }
-      If GridTop = Maximize 
+      If GridTop = Maximize
       {
         Gui, add, text,c%shadowcolor% BackGroundTrans  X%RestoreLeftShadow% Y%ShadowTop% ,Maximize
         Gui, add, text,c%textcolor% BackGroundTrans  X%RestoreLeft% Y%TextTop% ,Maximize
@@ -922,12 +923,12 @@ creategroups:
 
     If Gridtop = Run
     {
-      GridBottom := %A_Index%GridBottom
-      GridLeft := %A_Index%GridLeft
+      GridBottom := %PosIndex%GridBottom
+      GridLeft := %PosIndex%GridLeft
 
       If ShowNumbersFlag
       {
-        If (%A_Index%GridBottom != "")
+        If (%PosIndex%GridBottom != "")
         {
           Gui, add, text,c%shadowcolor% BackGroundTrans  X%RestoreLeftShadow% Y%ShadowTop% ,%A_Index%-%GridBottom%
           Gui, add, text,c%textcolor% BackGroundTrans  X%RestoreLeft% Y%TextTop% ,%A_Index%-%GridBottom%
@@ -939,7 +940,7 @@ creategroups:
         }
       }else
       {
-        If (%A_Index%GridBottom != "")
+        If (%PosIndex%GridBottom != "")
         {
           Gui, add, text,c%shadowcolor% BackGroundTrans  X%RestoreLeftShadow% Y%ShadowTop% ,%GridBottom%
           Gui, add, text,c%textcolor% BackGroundTrans  X%RestoreLeft% Y%TextTop% ,%GridBottom%
@@ -968,14 +969,14 @@ creategroups:
     Gui,2: +ToolWindow +AlwaysOnTop -Disabled -SysMenu -Caption
     Gui,2: Margin,0,0
   }
-  else 
+  else
   {
     Gui,2: Color, 0
     Aero_ChangeFrameAreaAll(gui2hwnd) ;call the Function
   }
   Gui,hide
 return
- 
+
 ;***********************************************************Aditional Functions
 
 ExitProgram:
@@ -1036,7 +1037,7 @@ Options_GridOrder:
   GridOrder := input
   GoSub, WriteIni
 return
-  
+
 Options_LButtonDrag:
   If LButtonDrag
   {
@@ -1061,7 +1062,7 @@ Options_mbuttonDrag:
   GoSub, WriteIni
   reload
 return
-  
+
 Options_EdgeDrag:
   If EdgeDrag
   {
@@ -1076,7 +1077,7 @@ Options_EdgeDrag:
     Menu,options_menu,Enable, %tray_edgetime%
   }
   GoSub, WriteIni
-return  
+return
 
 Options_EdgeTime:
   inputbox,input, %input_edgetime_title%,%input_edgetime%,,,,,,,,%EdgeTime%
@@ -1085,15 +1086,15 @@ Options_EdgeTime:
   EdgeTime := input
   GoSub, WriteIni
 return
-  
+
 Options_TitleSize:
   inputbox,input, %input_titlesize_title%,%input_titlesize%,,,,,,,,%TitleSize%
   if errorlevel <> 0
     return
   TitleSize := input
   GoSub, WriteIni
-return  
-  
+return
+
 Options_SafeMode:
   if SafeMode
   {
@@ -1114,7 +1115,7 @@ Options_ShowGrid:
     ShowGroupsFlag := false
     Menu,options_menu, Uncheck, %tray_showgrid%
     Menu,options_menu,Disable, %tray_shownumbers%
-  }  
+  }
   else
   {
     ShowGroupsFlag := True
@@ -1122,14 +1123,14 @@ Options_ShowGrid:
     Menu,options_menu,Enable, %tray_shownumbers%
   }
   GoSub, WriteIni
-return 
+return
 
 Options_ShowNumbers:
   If ShowNumbersFlag
   {
     ShowNumbersFlag := false
     Menu,options_menu, Uncheck, %tray_shownumbers%
-  }  
+  }
   else
   {
     ShowNumbersFlag := True
@@ -1137,7 +1138,7 @@ Options_ShowNumbers:
   }
   GoSub, WriteIni
   Reload
-return 
+return
 
 Template-Grids:
   GridName = Grids/%A_ThisMenuItem%.grid
@@ -1163,11 +1164,11 @@ NextGrid:
       break
       }
   }
-  Loop, Parse,GridOrder,CSV 
+  Loop, Parse,GridOrder,CSV
   {
     If A_LoopField is space
       continue
-      
+
     If NextGridFlag
     {
       NextGrid := A_LoopField
@@ -1181,7 +1182,7 @@ NextGrid:
   If (NextGridFlag OR NextGrid = "")
     {
     StringGetPos, CommaPosition, GridOrder, `,
-    StringLeft, NextGrid, GridOrder, %CommaPosition% 
+    StringLeft, NextGrid, GridOrder, %CommaPosition%
     }
   GridName = Grids/%NextGrid%.grid
   Critical,on
@@ -1195,7 +1196,7 @@ return
 
 ApplyGrid:
   If (GridName = "4part")
-    GridName = Grids/4-Part.grid 
+    GridName = Grids/4-Part.grid
   if (GridName = "edge")
     GridName = Grids/EdgeGrid.grid
   if (Gridname = "DualScreen")
@@ -1210,11 +1211,11 @@ ApplyGrid:
   else
     GoSub, CreateGridFromFile
 return
-
+; RegisterGridTile()
 CreateGridFromFile:
   Menu,templates_menu,DeleteAll
   createTemplatesMenu()
-  
+
   GoSub, HideGroups
   Gui,destroy
   Gui,2:destroy
@@ -1224,33 +1225,41 @@ CreateGridFromFile:
     MsgBox,%error_ngroups% %GridName%
     GoSub, Template-3Part
     return
-    } 
+    }
   ErrorLevel := False
+  NShortCuts := %NGroups%
   loop,%NGroups%
   {
     if a_index = "0"
       continue
-    TriggerTop    = %A_Index%TriggerTop
-    TriggerBottom = %A_Index%TriggerBottom
-    TriggerRight  = %A_Index%TriggerRight
-    TriggerLeft   = %A_Index%TriggerLeft
-      
-    GridTop    = %A_Index%GridTop
-    GridBottom = %A_Index%GridBottom
-    GridRight  = %A_Index%GridRight
-    GridLeft   = %A_Index%GridLeft
-      
+    IniRead, PosIndex, %A_ScriptDir%\%GridName%,%A_Index%, ShortCutNum, %A_Index%
+    if (ErrorLevel != 0 AND %PosNum% = %A_Index% )
+    {
+      ErrorLevel := False
+    }
+    %A_Index%PosNum = %PosIndex%
+    TriggerTop    = %PosIndex%TriggerTop
+    TriggerBottom = %PosIndex%TriggerBottom
+    TriggerRight  = %PosIndex%TriggerRight
+    TriggerLeft   = %PosIndex%TriggerLeft
+
+    GridTop    = %PosIndex%GridTop
+    GridBottom = %PosIndex%GridBottom
+    GridRight  = %PosIndex%GridRight
+    GridLeft   = %PosIndex%GridLeft
+
     IniRead,%TriggerTop%    ,%A_ScriptDir%\%GridName%,%A_Index%,TriggerTop,Error
     IniRead,%TriggerBottom% ,%A_ScriptDir%\%GridName%,%A_Index%,TriggerBottom,Error
     IniRead,%TriggerLeft%   ,%A_ScriptDir%\%GridName%,%A_Index%,TriggerLeft,Error
     IniRead,%TriggerRight%  ,%A_ScriptDir%\%GridName%,%A_Index%,TriggerRight,Error
-               
+
     IniRead,%GridTop%       ,%A_ScriptDir%\%GridName%,%A_Index%,GridTop,Error
     IniRead,%GridBottom%    ,%A_ScriptDir%\%GridName%,%A_Index%,GridBottom,Error
     IniRead,%GridLeft%      ,%A_ScriptDir%\%GridName%,%A_Index%,GridLeft,Error
     IniRead,%GridRight%     ,%A_ScriptDir%\%GridName%,%A_Index%,GridRight,Error
+    ; IniRead,%PosNum%        ,%A_ScriptDir%\%GridName%,%PosIndex%,PosNum,%PosIndex%
 
-    If (%TriggerTop%="Error" OR %TriggerBottom%="Error" 
+    If (%TriggerTop%="Error" OR %TriggerBottom%="Error"
         OR %TriggerLeft%="Error" OR %TriggerRight%="Error" )
       {
       ErrorCode := A_Index
@@ -1281,13 +1290,13 @@ return
 
 GetScreenSize()
 {
-  Global 
+  Global
   ScreenLeft   :=0
   ScreenTop    :=0
   ScreenRight  :=0
   ScreenBottom :=0
   Sysget,MonitorCount,MonitorCount
-  
+
   Loop,%MonitorCount%
   {
     SysGet,monitor,Monitor,%A_Index%
@@ -1301,7 +1310,7 @@ GetScreenSize()
       ScreenBottom:=monitorBottom
   }
   ScreenWidth := ScreenRight - ScreenLeft
-  ScreenHeight := ScreenBottom - ScreenTop 
+  ScreenHeight := ScreenBottom - ScreenTop
   return
 }
 
@@ -1311,7 +1320,7 @@ GetMonitorRight(MouseX, MouseY)
   Loop,%monitorcount%
   {
     SysGet,monitor,Monitor,%A_Index%
-    If (MouseX <= monitorRight AND MouseX >= monitorLeft 
+    If (MouseX <= monitorRight AND MouseX >= monitorLeft
         AND MouseY >= monitorTop AND MouseY <= monitorBottom)
       return %MonitorRight%
   }
@@ -1324,33 +1333,33 @@ GetMonitorBottom(MouseX, MouseY)
   Loop,%monitorcount%
   {
     SysGet,monitor,Monitor,%A_Index%
-    If (MouseX <= MonitorRight AND MouseX >= MonitorLeft 
+    If (MouseX <= MonitorRight AND MouseX >= MonitorLeft
         AND MouseY >= monitorTop AND MouseY <= monitorBottom)
       return, %MonitorBottom%
   }
   return error
 }
-  
+
 GetMonitorLeft(MouseX, MouseY)
 {
   SysGet,monitorcount,MonitorCount
   Loop,%monitorcount%
   {
     SysGet,monitor,Monitor,%A_Index%
-    If (MouseX <= MonitorRight AND MouseX >= MonitorLeft 
+    If (MouseX <= MonitorRight AND MouseX >= MonitorLeft
         AND MouseY >= monitorTop AND MouseY <= monitorBottom)
       return, %MonitorLeft%
   }
   return error
 }
-  
+
 GetMonitorTop(MouseX, MouseY)
 {
   SysGet,monitorcount,MonitorCount
   Loop,%monitorcount%
   {
     SysGet,monitor,Monitor,%A_Index%
-    If (MouseX <= MonitorRight AND MouseX >= MonitorLeft 
+    If (MouseX <= MonitorRight AND MouseX >= MonitorLeft
         AND MouseY >= monitorTop AND MouseY <= monitorBottom)
       return, %MonitorTop%
   }
@@ -1371,7 +1380,7 @@ StoreWindowState(WindowID,WindowX,WindowY,WindowWidth,WindowHeight)
   WindowHeightBuffer = %WindowHeight%,%WindowHeightBuffer%
   return
 }
-  
+
 GetWindowState(WindowId)
 {
   global
@@ -1383,7 +1392,7 @@ GetWindowState(WindowId)
   {
     if a_loopfield is space
       continue
-    if (WindowId = A_LoopField) 
+    if (WindowId = A_LoopField)
     {
       WindowX := WindowX%A_Index%
       WindowY := WindowY%A_Index%
@@ -1392,7 +1401,7 @@ GetWindowState(WindowId)
       return true
     }
   }
-  return false  
+  return false
 }
 
 evaluateGrid()
@@ -1401,36 +1410,38 @@ evaluateGrid()
   count := 0
   loop,%NGroups%
   {
+    PosIndex := %A_Index%PosNum
     value := A_Index - count
+    PosIndex := %value%PosNum
 
-    %value%TriggerTop    := eval(%A_Index%TriggerTop)
-    %value%TriggerBottom := eval(%A_Index%TriggerBottom)
-    %value%TriggerLeft   := eval(%A_Index%TriggerLeft)
-    %value%TriggerRight  := eval(%A_Index%TriggerRight)
-    
-    If (%A_Index%GridTop = "Run")
+    %PosIndex%TriggerTop    := CalcEval(%PosIndex%TriggerTop)
+    %PosIndex%TriggerBottom := CalcEval(%PosIndex%TriggerBottom)
+    %PosIndex%TriggerLeft   := CalcEval(%PosIndex%TriggerLeft)
+    %PosIndex%TriggerRight  := CalcEval(%PosIndex%TriggerRight)
+
+    If (%PosIndex%GridTop = "Run")
     {
-      %value%GridTop    := %A_Index%GridTop
-      %value%GridBottom := %A_Index%GridBottom
-      %value%GridLeft   := %A_Index%GridLeft
-      %value%GridRight  := %A_Index%GridRight
+      %PosIndex%GridTop    := %PosIndex%GridTop
+      %PosIndex%GridBottom := %PosIndex%GridBottom
+      %PosIndex%GridLeft   := %PosIndex%GridLeft
+      %PosIndex%GridRight  := %PosIndex%GridRight
       continue
     }
 
 
-    if(%value%GridTop <> "")
-      %value%GridTop    := eval(%A_Index%GridTop)
-    if(%value%GridBottom <> "")
-      %value%GridBottom := eval(%A_Index%GridBottom)
-    if(%value%GridLeft <> "")
-      %value%GridLeft   := eval(%A_Index%GridLeft)
-    if(%value%GridRight <> "")
-      %value%GridRight  := eval(%A_Index%GridRight)
+    if(%PosIndex%GridTop <> "")
+      %PosIndex%GridTop    := CalcEval(%PosIndex%GridTop)
+    if(%PosIndex%GridBottom <> "")
+      %PosIndex%GridBottom := CalcEval(%PosIndex%GridBottom)
+    if(%PosIndex%GridLeft <> "")
+      %PosIndex%GridLeft   := CalcEval(%PosIndex%GridLeft)
+    if(%PosIndex%GridRight <> "")
+      %PosIndex%GridRight  := CalcEval(%PosIndex%GridRight)
 
-    if (%value%TriggerTop = "error" OR %value%TriggerBottom = "Error" 
-        OR %value%TriggerLeft = "error" OR %value%TriggerRight = "error" 
-        OR %value%GridTop = "error" OR %value%GridBottom = "Error" 
-        OR %value%GridLeft = "error" OR %value%GridRight = "error")
+    if (%PosIndex%TriggerTop = "error" OR %PosIndex%TriggerBottom = "Error"
+        OR %PosIndex%TriggerLeft = "error" OR %PosIndex%TriggerRight = "error"
+        OR %PosIndex%GridTop = "error" OR %PosIndex%GridBottom = "Error"
+        OR %PosIndex%GridLeft = "error" OR %PosIndex%GridRight = "error")
     {
       count += 1
       continue
@@ -1441,9 +1452,9 @@ evaluateGrid()
 
 Getmonitorsizes()
 {
-  global 
+  global
   sysget,monitorCount,MonitorCount
-  
+
   loop,%monitorCount%
   {
     sysget,monitorReal,Monitor,%A_Index%
@@ -1454,20 +1465,20 @@ Getmonitorsizes()
     monitor%a_Index%Top    :=MonitorTop
     monitor%a_Index%Width  :=MonitorRight - MonitorLeft
     monitor%a_Index%Height :=MonitorBottom - MonitorTop
-    
+
     monitorreal%A_Index%Left   :=MonitorRealLeft
     monitorreal%A_Index%Bottom :=MonitorRealBottom
     monitorreal%A_Index%Right  :=MonitorRealRight
     monitorreal%A_Index%Top    :=MonitorRealTop
     monitorreal%A_Index%Width  :=MonitorRealRight - MonitorRealLeft
     monitorreal%A_Index%Height :=MonitorRealBottom - MonitorRealTop
-  } 
+  }
   return
 }
 
 ComputeEdgeRectangles()
 {
-  global 
+  global
 
   sysget,MonitorCount,MonitorCount
 
@@ -1540,7 +1551,7 @@ StartWithWindowsToggle:
 return
 
 EnableAutoUpdate:
-  ; Register with DcUpdater and check for updates. 
+  ; Register with DcUpdater and check for updates.
   ; When no updates are found nothing is displayed.
   ; make sure the dcuhelper.exe is in a subdirectory called 'dcuhelper' of this script's location.
   cmdParams = -ri    ;r = register app, i = check for updates
@@ -1610,7 +1621,7 @@ loadAero()
 
   return true
 }
-  
+
 #include files.ahk
 #include command.ahk
 #include calc.ahk

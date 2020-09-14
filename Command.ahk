@@ -4,7 +4,7 @@
 ;function: Adjusts windows to a predefined or user-defined desktop grid.
 
 Command:
-  
+
   GoSub, ShowGroups
 
 Drop_Command:
@@ -22,7 +22,7 @@ Drop_Command:
     GoSub, Command_Hide
     return
     }
-  
+
   If FirstNumber is not number
     {
     If (FirstNumber = "M")
@@ -49,7 +49,7 @@ Drop_Command:
       {
       GoSub, Command_Hide
       msgbox,NOT DONE!!
-;      WinMove, A, ,%WinLeft%,%GridTop%, %WinWidth%,% GridBottom - GridTop,    
+;      WinMove, A, ,%WinLeft%,%GridTop%, %WinWidth%,% GridBottom - GridTop,
 ;      StoreWindowState(WindowId,WinLeft,WinTop,WinWidth,WinHeight)
       return
       }
@@ -67,19 +67,19 @@ Drop_Command:
     GoSub, Command_Hide
     return
     }
-      
-  If (NGroups < FirstNumber * 10)
-    {
-    If (FirstNumber = "0")
-      {
-      GoSub, Command_Hide
-      WinMinimize,A
-      return
-      }
-    GoSub, Command_Hide
-    MoveToGrid(FirstNumber)
-    return
-    }
+
+  ; If (NGroups < FirstNumber * 10)
+  ;   {
+  ;   If (FirstNumber = "0")
+  ;     {
+  ;     GoSub, Command_Hide
+  ;     WinMinimize,A
+  ;     return
+  ;     }
+  ;   GoSub, Command_Hide
+  ;   MoveToGrid(FirstNumber)
+  ;   return
+  ;   }
 
   Command2:
   output := FirstNumber . " -"
@@ -121,14 +121,14 @@ Drop_Command:
     GoSub, Command_Hide
     return
     }
-  
+
   If firstnumber = 0
     GridNumber := SecondNumber
   else
     GridNumber := FirstNumber . SecondNumber
   GoSub, Command_Hide
   MoveToGrid(GridNumber)
-  return    
+  return
 
 OSDCreate()
   {
@@ -137,7 +137,7 @@ OSDCreate()
   Gui,4: Font,S13
   Gui,4: Add, Button, vOSD x0 y0 w100 h30 ,
   Gui,4: Color, EEAAEE
-  Gui,4: Show, x0 y0 w0 h0 noactivate, OSD 
+  Gui,4: Show, x0 y0 w0 h0 noactivate, OSD
   Gui,4: hide
   WinSet, TransColor, EEAAEE,OSD
   return
@@ -157,7 +157,7 @@ OSDWrite(Value)
   Gui,4:Show, x%Xpos% y%Ypos% w100 h30 noactivate
   return
   }
-  
+
 OSDHide()
   {
   Gui,4:hide,
@@ -210,7 +210,7 @@ MoveToGrid(GridToMove)
     if ShouldUseSizeMoveMessage(WinClass)
       SendMessage WM_ENTERSIZEMOVE, , , ,ahk_id %windowid%
 
-    WinMove, A, ,%WinLeft%,%GridTop%, %WinWidth%,% GridBottom - GridTop,    
+    WinMove, A, ,%WinLeft%,%GridTop%, %WinWidth%,% GridBottom - GridTop,
 
     if ShouldUseSizeMoveMessage(WinClass)
       SendMessage WM_EXITSIZEMOVE, , , ,ahk_id %windowid%
@@ -224,7 +224,7 @@ MoveToGrid(GridToMove)
     if ShouldUseSizeMoveMessage(WinClass)
       SendMessage WM_ENTERSIZEMOVE, , , ,ahk_id %windowid%
 
-    WinMove, A, ,%GridLeft%,%WinTop%, % GridRight - GridLeft,%WinHeight%,    
+    WinMove, A, ,%GridLeft%,%WinTop%, % GridRight - GridLeft,%WinHeight%,
 
     if ShouldUseSizeMoveMessage(WinClass)
       SendMessage WM_EXITSIZEMOVE, , , ,ahk_id %windowid%
@@ -233,7 +233,7 @@ MoveToGrid(GridToMove)
   }
   If (GridTop = "AlwaysOnTop")
   {
-    WinSet, AlwaysOnTop, Toggle,A 
+    WinSet, AlwaysOnTop, Toggle,A
     return
   }
   If (GridTop =  "Maximize")
@@ -243,22 +243,22 @@ MoveToGrid(GridToMove)
       WinRestore,A
     else
       PostMessage, 0x112, 0xF030,,, A,
-    return 
+    return
   }
   If (GridTop = "Run")
   {
     Run,%GridLeft% ,%GridRight%
-    return              
+    return
   }
   if (GridTop = "Restore")
   {
     data := GetWindowState(WindowId)
-    If data   
+    If data
       {
       GridLeft  := WindowX
       GridRight := WindowX + WindowWidth
       GridTop   := WindowY
-      GridBottom:= WindowY + WindowHeight 
+      GridBottom:= WindowY + WindowHeight
       WinRestore,A
 
       WinGetClass,WinClass,A
@@ -280,7 +280,7 @@ MoveToGrid(GridToMove)
   GridRight := round(GridRight)
   GridBottom := round(GridBottom)
 
-  GridWidth  := GridRight - GridLeft 
+  GridWidth  := GridRight - GridLeft
   GridHeight := GridBottom - GridTop
 
   WinRestore,A
@@ -320,13 +320,13 @@ DefineHotkeys:
   Hotkey, %FastMoveModifiers%Numpad0, WinHotkeys
   if FastMoveMeta <>
     Hotkey, %FastMoveModifiers%%FastMoveMeta%, WinHotkeysMeta
-  return 
+  return
 
 WinHotkeys:
   StringRight,Number,A_ThisHotkey,1
   MoveToGrid(Number)
   return
-  
+
 WinHotkeysMeta:
   GoSub, ShowGroups
 
@@ -344,7 +344,7 @@ WinHotkeysMeta:
     GoSub, Command_Hide
     return
     }
-  
+
   If FirstNumber is not number
     {
     If (FirstNumber = "M")
@@ -371,7 +371,7 @@ WinHotkeysMeta:
       {
       GoSub, Command_Hide
       msgbox,NOT DONE!!
-;      WinMove, A, ,%WinLeft%,%GridTop%, %WinWidth%,% GridBottom - GridTop,    
+;      WinMove, A, ,%WinLeft%,%GridTop%, %WinWidth%,% GridBottom - GridTop,
 ;      StoreWindowState(WindowId,WinLeft,WinTop,WinWidth,WinHeight)
       return
       }
@@ -389,7 +389,7 @@ WinHotkeysMeta:
     GoSub, Command_Hide
     return
     }
-      
+
   GoSub, Command_Hide
   FirstNumber := FirstNumber + 10
   MoveToGrid(FirstNumber)
@@ -442,7 +442,7 @@ MoveToNext:
     GridHeight := GridBottom - GridTop
     GridWidth := GridRight - GridLeft
 
-    if (WinTop = GridTop && WinLeft = GridLeft 
+    if (WinTop = GridTop && WinLeft = GridLeft
       && WinHeight = GridHeight && WinWidth = GridWidth)
     {
       current := a_index
