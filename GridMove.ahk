@@ -2,7 +2,6 @@
 ;By jgpaiva
 ;date: May 2006
 ;function: Adjusts windows to a predefined or user-defined desktop grid.
-
   ;;options:
   MButtonDrag := True ;to be able to drag a window using the 3rd mouse button
   LButtonDrag:=True ;to be able to drag a window by its title
@@ -1211,15 +1210,29 @@ ApplyGrid:
   else
     GoSub, CreateGridFromFile
 return
-; RegisterGridTile()
+
+GetMonitorScale()
+{
+  global
+  Sysget,MonitorCount,MonitorCount
+  Loop,%MonitorCount%
+  {
+      Monitor%A_Index%Scale := 1
+      _monscalevar = Monitor%A_Index%Scale
+      IniRead,%_monscalevar%,%A_ScriptDir%\%GridName%,Groups,%_monscalevar%,1
+  }
+}
 CreateGridFromFile:
   Menu,templates_menu,DeleteAll
   createTemplatesMenu()
-
   GoSub, HideGroups
   Gui,destroy
   Gui,2:destroy
+  GetMonitorScale()
+  GetMonitorSizes()
   IniRead,NGroups,%A_ScriptDir%\%GridName%,Groups,NumberOfGroups,Error
+  IniRead,Blocksize,%A_ScriptDir%\%GridName%,Groups,Blocksize,5
+  SetBlocks()
   If (NGroups = "error")
     {
     MsgBox,%error_ngroups% %GridName%
@@ -1227,7 +1240,6 @@ CreateGridFromFile:
     return
     }
   ErrorLevel := False
-  NShortCuts := %NGroups%
   loop,%NGroups%
   {
     if a_index = "0"
@@ -1248,17 +1260,24 @@ CreateGridFromFile:
     GridRight  = %PosIndex%GridRight
     GridLeft   = %PosIndex%GridLeft
 
-    IniRead,%TriggerTop%    ,%A_ScriptDir%\%GridName%,%A_Index%,TriggerTop,Error
-    IniRead,%TriggerBottom% ,%A_ScriptDir%\%GridName%,%A_Index%,TriggerBottom,Error
-    IniRead,%TriggerLeft%   ,%A_ScriptDir%\%GridName%,%A_Index%,TriggerLeft,Error
-    IniRead,%TriggerRight%  ,%A_ScriptDir%\%GridName%,%A_Index%,TriggerRight,Error
+    IniRead,ShowGrid        ,%A_ScriptDir%\%GridName%,%A_Index%,ShowGrid,"0"
+    IniRead,%TriggerTop%    ,%A_ScriptDir%\%GridName%,%A_Index%,TriggerTop,0
+    IniRead,%TriggerBottom% ,%A_ScriptDir%\%GridName%,%A_Index%,TriggerBottom,0
+    IniRead,%TriggerLeft%   ,%A_ScriptDir%\%GridName%,%A_Index%,TriggerLeft,0
+    IniRead,%TriggerRight%  ,%A_ScriptDir%\%GridName%,%A_Index%,TriggerRight,0
 
     IniRead,%GridTop%       ,%A_ScriptDir%\%GridName%,%A_Index%,GridTop,Error
     IniRead,%GridBottom%    ,%A_ScriptDir%\%GridName%,%A_Index%,GridBottom,Error
     IniRead,%GridLeft%      ,%A_ScriptDir%\%GridName%,%A_Index%,GridLeft,Error
     IniRead,%GridRight%     ,%A_ScriptDir%\%GridName%,%A_Index%,GridRight,Error
     ; IniRead,%PosNum%        ,%A_ScriptDir%\%GridName%,%PosIndex%,PosNum,%PosIndex%
-
+    If (ShowGrid=1 AND %TriggerTop%="0" AND %TriggerBottom%="0" AND %TriggerLeft%="0" AND %TriggerRight%="0")
+    {
+      %TriggerTop%    := %GridTop%
+      %TriggerBottom% := %GridBottom%
+      %TriggerLeft%   := %GridLeft%
+      %TriggerRight%  := %GridRight%
+    }
     If (%TriggerTop%="Error" OR %TriggerBottom%="Error"
         OR %TriggerLeft%="Error" OR %TriggerRight%="Error" )
       {
@@ -1300,6 +1319,7 @@ GetScreenSize()
   Loop,%MonitorCount%
   {
     SysGet,monitor,Monitor,%A_Index%
+    Monitor%A_Index%Scale=1
     If (monitorLeft<ScreenLeft)
       ScreenLeft:=monitorLeft
     If (monitorTop<ScreenTop)
@@ -1449,7 +1469,36 @@ evaluateGrid()
   }
   ngroups -= count
 }
+SetBlocks()
+{
+  global
+  bs := Blocksize + 1
+  ; Use monitor 2 as standard
+  loop,%bs%
+  {
+    _safe_pads = 0
+    ; if (A_Index=1)
+    ; {
+        ; _safe_pads=5
+    ; }
+    B%A_Index%L := M2L + _safe_pads + (A_Index-1) * M2W / blocksize
+    B%A_Index% := M2L + _safe_pads + (A_Index-1) * M2W / blocksize
+    B%A_Index%R := M2L + _safe_pads + (A_Index) * M2W / blocksize
+  }
+  sysget,monitorCount,MonitorCount
 
+  loop,%monitorCount%
+  {
+    mtr := A_Index
+    loop,%bs%
+    {
+      M%mtr%B%A_Index%L := Monitor%mtr%Left + (A_Index-1) * Monitor%mtr%Width / blocksize
+      M%mtr%B%A_Index%  := Monitor%mtr%Left + (A_Index-1) * Monitor%mtr%Width / blocksize
+      M%mtr%B%A_Index%R := Monitor%mtr%Left + (A_Index) * Monitor%mtr%Width / blocksize
+    }
+  }
+
+}
 Getmonitorsizes()
 {
   global
@@ -1459,12 +1508,25 @@ Getmonitorsizes()
   {
     sysget,monitorReal,Monitor,%A_Index%
     sysget,monitor,MonitorWorkArea,%A_Index%
-    monitor%a_Index%Left   :=MonitorLeft
-    monitor%a_Index%Bottom :=MonitorBottom
-    monitor%a_Index%Right  :=MonitorRight
-    monitor%a_Index%Top    :=MonitorTop
-    monitor%a_Index%Width  :=MonitorRight - MonitorLeft
-    monitor%a_Index%Height :=MonitorBottom - MonitorTop
+    scalefactor := Monitor%A_Index%Scale
+
+    MonitorHeight := (MonitorBottom - MonitorTop)
+    MonitorWidth := (MonitorRight - MonitorLeft)
+    monitor%A_Index%Left   :=MonitorLeft
+    monitor%A_Index%Bottom :=MonitorHeight
+    monitor%A_Index%Right  :=MonitorWidth
+    monitor%A_Index%Top    :=MonitorTop
+    monitor%A_Index%Width  :=MonitorWidth
+    monitor%A_Index%Height :=MonitorHeight
+
+    M%A_Index%M := MonitorTop + monitor%A_Index%Height/2
+
+    M%A_Index%L := MonitorLeft
+    M%A_Index%B := MonitorBottom
+    M%A_Index%R := MonitorRight
+    M%A_Index%T := MonitorTop
+    M%A_Index%W := MonitorRight - MonitorLeft
+    M%A_Index%H := MonitorBottom - MonitorTop
 
     monitorreal%A_Index%Left   :=MonitorRealLeft
     monitorreal%A_Index%Bottom :=MonitorRealBottom

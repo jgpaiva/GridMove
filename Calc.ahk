@@ -15,6 +15,12 @@ CalcEval(X)
   Global Monitor2Bottom
   Global Monitor2Width
   Global Monitor2Height
+  Global M2L
+  Global M2R
+  Global M2T
+  Global M2B
+  Global M2W
+  Global M2H
   Global Monitor3Left
   Global Monitor3Right
   Global Monitor3Top

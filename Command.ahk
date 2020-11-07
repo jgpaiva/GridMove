@@ -275,10 +275,10 @@ MoveToGrid(GridToMove)
       }
     return
   }
-  GridTop := round(GridTop)
-  GridLeft := round(GridLeft)
-  GridRight := round(GridRight)
-  GridBottom := round(GridBottom)
+  ; GridTop := round(GridTop)
+  ; GridLeft := round(GridLeft)
+  ; GridRight := round(GridRight)
+  ; GridBottom := round(GridBottom)
 
   GridWidth  := GridRight - GridLeft
   GridHeight := GridBottom - GridTop
