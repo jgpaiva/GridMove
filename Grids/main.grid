@@ -1,14 +1,14 @@
 [Groups]
 
-  NumberOfGroups = 25
+  NumberOfGroups = 35
   Blocksize = 7
-  Monitor1Scale = 1.25
+  Monitor2Scale = 1
 [1]
 
   GridTop       = [Monitor2Top] + [Monitor2Height] /2
   GridBottom    = [Monitor2Bottom]
-  GridLeft      = [B1]
-  GridRight     = [B3]
+  GridLeft      = [M2B1]
+  GridRight     = [M2B3]
 
   ShowGrid      = 0
 
@@ -16,8 +16,8 @@
 
   GridTop       = [Monitor2Top] + [Monitor2Height] /2
   GridBottom    = [Monitor2Bottom]
-  GridLeft      = [B3]
-  GridRight     = [B6]
+  GridLeft      = [M2B3]
+  GridRight     = [M2B6]
 
   ShowGrid      = 0
 
@@ -25,8 +25,8 @@
 
   GridTop       = [Monitor2Top] + [Monitor2Height] /2
   GridBottom    = [Monitor2Bottom]
-  GridLeft      = [B6]
-  GridRight     = [B7R] - 5.5
+  GridLeft      = [M2B6]
+  GridRight     = [M2B7R] - 5.5
 
   ShowGrid      = 0
 
@@ -35,8 +35,8 @@
 
   GridTop       = [Monitor2Top]
   GridBottom    = [Monitor2Bottom]
-  GridLeft      = [B1]
-  GridRight     = [B3]
+  GridLeft      = [M2B1]
+  GridRight     = [M2B3]
 
   ShowGrid      = 0
 
@@ -44,8 +44,8 @@
 
   GridTop       = [Monitor2Top]
   GridBottom    = [Monitor2Bottom]
-  GridLeft      = [B3]
-  GridRight     = [B6]
+  GridLeft      = [M2B3]
+  GridRight     = [M2B6]
 
   ShowGrid      = 0
 
@@ -54,8 +54,8 @@
   ShortCutNum   = 55
   GridTop       = [Monitor2Top]
   GridBottom    = [Monitor2Bottom]
-  GridLeft      = [B3]
-  GridRight     = [B6]
+  GridLeft      = [M2B3]
+  GridRight     = [M2B6]
 
   ShowGrid      = 0
 
@@ -72,8 +72,8 @@
 
   GridTop       = [Monitor2Top]
   GridBottom    = [Monitor2Top] + [Monitor2Height] /2
-  GridLeft      = [B1]
-  GridRight     = [B3]
+  GridLeft      = [M2B1]
+  GridRight     = [M2B3]
 
   ShowGrid      = 0
 
@@ -81,8 +81,8 @@
 
   GridTop       = [Monitor2Top]
   GridBottom    = [Monitor2Top] + [Monitor2Height] /2
-  GridLeft      = [B3]
-  GridRight     = [B6]
+  GridLeft      = [M2B3]
+  GridRight     = [M2B6]
 
   ShowGrid      = 0
 
@@ -90,8 +90,8 @@
 
   GridTop       = [Monitor2Top]
   GridBottom    = [Monitor2Top] + [Monitor2Height] /2
-  GridLeft      = [B6]
-  GridRight     = [B7R] - 5.5
+  GridLeft      = [M2B6]
+  GridRight     = [M2B7R] - 5.5
 
   ShowGrid      = 0
 
@@ -99,7 +99,7 @@
 
   GridTop       = [Monitor2Top] - 2*[Monitor2Height]
   GridBottom    = [Monitor2Top] - 1.5*[Monitor2Height]
-  GridLeft      = WindowWidth
+  GridLeft      = WindowWidth2
   GridRight     = WindowWidth
 
   ShowGrid      = 0
@@ -110,8 +110,8 @@
 # LEFT: Bottom left
   GridTop       = [M2T] + [M2H]/2
   GridBottom    = [M2B]
-  GridLeft      = [B1]
-  GridRight     = [B2]
+  GridLeft      = [M2B1]
+  GridRight     = [M2B2]
   ShowGrid      = 1
 
 [12]#13
@@ -119,8 +119,8 @@
   ShortCutNum   = 13
   GridTop       = [M2T] + [M2H]/2
   GridBottom    = [M2B]
-  GridLeft      = [B2]
-  GridRight     = [B3]
+  GridLeft      = [M2B2]
+  GridRight     = [M2B3]
 
   ShowGrid      = 1
 
@@ -129,8 +129,8 @@
   ShortCutNum   = 17
   GridTop       = [M2T]
   GridBottom    = [M2B] - [M2H]/2
-  GridLeft      = [B1]
-  GridRight     = [B2]
+  GridLeft      = [M2B1]
+  GridRight     = [M2B2]
 
   ShowGrid      = 1
 
@@ -139,8 +139,8 @@
   ShortCutNum   = 19
   GridTop       = [M2T]
   GridBottom    = [M2M]
-  GridLeft      = [B2]
-  GridRight     = [B3]
+  GridLeft      = [M2B2]
+  GridRight     = [M2B3]
 
   ShowGrid      = 1
 
@@ -150,8 +150,8 @@
   ShortCutNum   = 39
   GridTop       = [M2T]
   GridBottom    = [M2M]
-  GridLeft      = [B7]
-  GridRight     = [B8]
+  GridLeft      = [M2B7]
+  GridRight     = [M2B8]
 
   ShowGrid      = 1
 
@@ -160,8 +160,8 @@
   ShortCutNum   = 99
   GridTop       = [M2T]
   GridBottom    = [M2M]
-  GridLeft      = [B7]
-  GridRight     = [B8]
+  GridLeft      = [M2B7]
+  GridRight     = [M2B8]
 
   ShowGrid      = 1
 
@@ -170,8 +170,8 @@
   ShortCutNum   = 37
   GridTop       = [M2T]
   GridBottom    = [M2M]
-  GridLeft      = [B6]
-  GridRight     = [B7]
+  GridLeft      = [M2B6]
+  GridRight     = [M2B7]
 
   ShowGrid      = 1
 
@@ -180,8 +180,8 @@
   ShortCutNum   = 33
   GridTop       = [M2M]
   GridBottom    = [M2B]
-  GridLeft      = [B7]
-  GridRight     = [B8]
+  GridLeft      = [M2B7]
+  GridRight     = [M2B8]
 
   ShowGrid      = 1
 
@@ -190,8 +190,8 @@
   ShortCutNum   = 31
   GridTop       = [M2M]
   GridBottom    = [M2B]
-  GridLeft      = [B6]
-  GridRight     = [B7]
+  GridLeft      = [M2B6]
+  GridRight     = [M2B7]
 
   ShowGrid      = 1
 
@@ -200,8 +200,8 @@
   ShortCutNum   = 44
   GridTop       = [Monitor2Top]
   GridBottom    = [Monitor2Bottom]
-  GridLeft      = [B1]
-  GridRight     = [B6]
+  GridLeft      = [M2B1]
+  GridRight     = [M2B6]
 
   ShowGrid      = 0
 
@@ -210,7 +210,7 @@
   ShortCutNum   = 66
   GridTop       = [Monitor2Top]
   GridBottom    = [Monitor2Bottom]
-  GridLeft      = [B5]
+  GridLeft      = [M2B5]
   GridRight     = [M2R] - 10
 
   ShowGrid      = 0
@@ -219,7 +219,7 @@
 #  ShortCutNum   = 66
 #  GridTop       = [Monitor2Top]
 #  GridBottom    = [Monitor2Bottom]
-#  GridLeft      = [B3]
+#  GridLeft      = [M2B3]
 #  GridRight     = [M2R] - 10
 ##
 #  ShowGrid      = 0
@@ -229,8 +229,8 @@
   ShortCutNum   = 65
   GridTop       = [Monitor2Top]
   GridBottom    = [Monitor2Bottom]
-  GridLeft      = [B2]
-  GridRight     = [B5]
+  GridLeft      = [M2B2]
+  GridRight     = [M2B5]
 
   ShowGrid      = 0
 
@@ -239,20 +239,146 @@
   ShortCutNum   = 64
   GridTop       = [Monitor2Top]
   GridBottom    = [Monitor2Bottom]
-  GridLeft      = [B1]
-  GridRight     = [B2]
+  GridLeft      = [M2B1]
+  GridRight     = [M2B2]
 
   ShowGrid      = 0
 ## Monitor 1
 
 [20]#56
-  # M1: RightQ
   ShortCutNum   = 56
-  GridTop       = ([Monitor1Top])
-  GridBottom    = ([Monitor1Top]+[Monitor1Height])
-  GridLeft      = ([Monitor1Left] + [Monitor1Width] * 5/7)
-  GridRight     = ([Monitor1Left] + [Monitor1Width])
+  GridTop       = [Monitor2Top]
+  GridBottom    = [Monitor2Bottom]
+  GridLeft      = [M2B3]
+  GridRight     = [Monitor2Right]
+
+  ShowGrid      = 0
+
+[26]#54
+  ShortCutNum   = 54
+  GridTop       = [Monitor2Top]
+  GridBottom    = [Monitor2Bottom]
+  GridLeft      = [Monitor2Left]
+  GridRight     = [M2B3]
+
+  ShowGrid      = 0
+
+[27]#45
+  ShortCutNum   = 45
+  GridTop       = [Monitor2Top]
+  GridBottom    = [Monitor2Bottom]
+  GridLeft      = [Monitor2Left]
+  GridRight     = [M2B6]
+
+  ShowGrid      = 0
+
+[28]#46
+  ShortCutNum   = 46 
+  GridTop       = [Monitor2Top]
+  GridBottom    = [Monitor2Bottom]
+  GridLeft      = [M2B6]
+  GridRight     = [Monitor2Right]
+
+  ShowGrid      = 0
+
+
+## Programmer screen
+
+[29]#85
+
+  ShortCutNum   = 85
+  GridTop       = [M3V1]
+  GridBottom    = [M3V6]
+  GridLeft      = [M3L]
+  GridRight     = [M3R]
+
+  TriggerTop       = [M3V1]
+  TriggerBottom    = [M3V6]
+  TriggerLeft      = [M3B3]
+  TriggerRight     = [M3B4]
+
+  ShowGrid      = 0
+
+[30]#22
+
+  ShortCutNum   = 22
+  GridTop       = [M3V6]
+  GridBottom    = [M3B]
+  GridLeft      = [M3L]
+  GridRight     = [M3R]
+
+  TriggerTop       = [M3V6]
+  TriggerBottom    = [M3B]
+  TriggerLeft      = [M3B3]
+  TriggerRight     = [M3B4]
+
+  ShowGrid      = 0
+
+[31]
+
+  ShortCutNum   = 25
+  GridTop       = [M3V4]
+  GridBottom    = [M3B]
+  GridLeft      = [M3L]
+  GridRight     = [M3R]
+
+  ShowGrid      = 0
+
+
+[32]#88
+
+  ShortCutNum   = 88
+  GridTop       = [M3T]
+  GridBottom    = [M3V4]
+  GridLeft      = [M3L]
+  GridRight     = [M3R]
+
+  ShowGrid      = 0
+
+[33]
+
+  ShortCutNum   = 51
+  GridTop       = [M3V3]
+  GridBottom    = [M3B]
+  GridLeft      = [M3L]
+  GridRight     = [M3R]
+
+  TriggerTop       = [M3V3]
+  TriggerBottom    = [M3B]
+  TriggerLeft      = [M3B2]
+  TriggerRight     = [M3B3]
+
+  ShowGrid      = 0
+
+[34]
+
+  ShortCutNum   = 57
+  GridTop       = [M3T]
+  GridBottom    = [M3V3]
+  GridLeft      = [M3L]
+  GridRight     = [M3R]
+
+  TriggerTop       = [M3T]
+  TriggerBottom    = [M3V3]
+  TriggerLeft      = [M3B2]
+  TriggerRight     = [M3B3]
+
   ShowGrid      = 1
+
+[35]
+
+  ShortCutNum   = 89
+  GridTop       = [M3T]
+  GridBottom    = [M3B]
+  GridLeft      = [M3L]
+  GridRight     = [M3R]
+
+  TriggerTop       = [M3T]
+  TriggerBottom    = [M3B]
+  TriggerLeft      = [M3B1] + 5.5
+  TriggerRight     = [M3B2]
+
+  ShowGrid      = 0
 
 
 ##### REMEMBER TO CHECK NumberOfGroups on top!!! #####

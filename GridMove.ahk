@@ -1473,7 +1473,7 @@ SetBlocks()
 {
   global
   bs := Blocksize + 1
-  ; Use monitor 2 as standard
+  ; Use monitor 1 as standard
   loop,%bs%
   {
     _safe_pads = 0
@@ -1481,9 +1481,13 @@ SetBlocks()
     ; {
         ; _safe_pads=5
     ; }
-    B%A_Index%L := M2L + _safe_pads + (A_Index-1) * M2W / blocksize
-    B%A_Index% := M2L + _safe_pads + (A_Index-1) * M2W / blocksize
-    B%A_Index%R := M2L + _safe_pads + (A_Index) * M2W / blocksize
+    B%A_Index%L := M1L + _safe_pads + (A_Index-1) * M1W / blocksize
+    B%A_Index% := M1L + _safe_pads + (A_Index-1) * M1W / blocksize
+    B%A_Index%R := M1L + _safe_pads + (A_Index) * M1W / blocksize
+    ; Vertical for monitor 2
+    V%A_Index%T := M2T + _safe_pads + (A_Index-1) * M2H / blocksize
+    V%A_Index% := M2T + _safe_pads + (A_Index-1) * M2H / blocksize
+    V%A_Index%B := M2T + _safe_pads + (A_Index) * M2H / blocksize
   }
   sysget,monitorCount,MonitorCount
 
@@ -1495,6 +1499,10 @@ SetBlocks()
       M%mtr%B%A_Index%L := Monitor%mtr%Left + (A_Index-1) * Monitor%mtr%Width / blocksize
       M%mtr%B%A_Index%  := Monitor%mtr%Left + (A_Index-1) * Monitor%mtr%Width / blocksize
       M%mtr%B%A_Index%R := Monitor%mtr%Left + (A_Index) * Monitor%mtr%Width / blocksize
+      
+      M%mtr%V%A_Index%T := M%mtr%T + _safe_pads + (A_Index-1) * M%mtr%H / blocksize
+      M%mtr%V%A_Index% := M%mtr%T + _safe_pads + (A_Index-1) * M%mtr%H / blocksize
+      M%mtr%V%A_Index%B := M%mtr%T + _safe_pads + (A_Index) * M%mtr%H / blocksize
     }
   }
 
