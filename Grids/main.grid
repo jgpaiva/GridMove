@@ -1,8 +1,8 @@
 [Groups]
 
-  NumberOfGroups = 35
+  NumberOfGroups = 36
   Blocksize = 7
-  Monitor2Scale = 1
+  Monitor1Scale = 1.25
 [1]
 
   GridTop       = [Monitor2Top] + [Monitor2Height] /2
@@ -145,15 +145,14 @@
   ShowGrid      = 1
 
 ## Right part of screen
-[15]#39
+[15]
   # RIGHT: Top right
-  ShortCutNum   = 39
   GridTop       = [M2T]
   GridBottom    = [M2M]
   GridLeft      = [M2B7]
   GridRight     = [M2B8]
 
-  ShowGrid      = 1
+  ShowGrid      = 0
 
 [22]#99
   # RIGHT: Top right
@@ -380,7 +379,16 @@
 
   ShowGrid      = 0
 
+[36]
+  
+  ShortCutNum   = 39
+  GridTop       = [M1T]
+  GridBottom    = [M1B]
+  GridLeft      = [M1L]
+  GridRight     = [M1R]
 
+  ShowGrid      = 1
+  
 ##### REMEMBER TO CHECK NumberOfGroups on top!!! #####
 
 #[12]
