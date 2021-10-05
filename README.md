@@ -29,7 +29,7 @@ Block system. The screen(s) are divided up into a given blocksize. E.g. in your 
 
 Blocks are used M`X`B`Y`, where `X` is the monitor number and `Y` is the block number. Se example below
 
-Customizable numberings (doesn't have to be the group number):
+Customizable shortcuts (doesn't have to be the group number):
 ```
 [25]
   ShortCutNum   = 4
